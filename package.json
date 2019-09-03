@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "lazy-nyaong-blog",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Forked gatsby-starter-blog. It's now my blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Oh Seunghyeon <postercolo@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
@@ -38,15 +38,16 @@
   "devDependencies": {
     "prettier": "^1.18.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://ohseunghyeon.github.io/",
   "keywords": [
-    "gatsby"
+    "ohseunghyeon",
+    "blog"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/ohseunghyeon/gatsby-starter-blog.git"
   },
   "scripts": {
     "build": "gatsby build",
