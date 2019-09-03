@@ -17,3 +17,4 @@ description: 새로 만든 Gatsby 블로그를 내 마음대로 뜯어 고치기
 - [ ] font 가독성 좋게 바꾸기
 - [ ] github actions로 자동 배포하기
 - [ ] 새로운 게시글을 만드는 script 생성
+- [ ] about 페이지 만들기
