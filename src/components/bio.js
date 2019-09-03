@@ -57,8 +57,9 @@ const Bio = () => {
         서울 사는 <strong>{author}</strong>
         {` `}
         <a href={`https://github.com/${social.github}`}>
-          github profile
+          github
         </a>
+
       </p>
     </div>
   )

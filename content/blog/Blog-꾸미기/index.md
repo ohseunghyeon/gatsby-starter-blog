@@ -12,9 +12,10 @@ description: 새로 만든 Gatsby 블로그를 내 마음대로 뜯어 고치기
 
 그래서 나는 고치고 싶은 부분들을 리스트로 정리해서 하나하나 하기로 했다.
 
+- [x] emoji 적용하기 :cat:
+- [ ] github actions로 자동 배포하기
 - [ ] 카테고리 넣기
 - [ ] Dark Theme 넣기
 - [ ] font 가독성 좋게 바꾸기
-- [ ] github actions로 자동 배포하기
 - [ ] 새로운 게시글을 만드는 script 생성
 - [ ] about 페이지 만들기
