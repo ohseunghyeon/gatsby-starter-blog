@@ -2,7 +2,6 @@
 title: Github pages를 github actions로 자동 배포하기
 date: "2019-09-04T02:47:08.633Z"
 description: Github blog를 Github에서 제공하는 github actions로 배포하기
-featuredImage: ./signup.png
 ---
 
 블로그를 자동으로 배포하고 싶다. 수동으로 하는 방법은 너무 번거롭기 때문이다.
@@ -38,7 +37,8 @@ Github Actions는 깃헙 저장소의 push, pull request 등 미리 정의된 �
 
 또한 누군가 이슈를 올렸을 때 특정한 로직을 실행(이슈에 올라온 코드를 자동으로 실행하여 에러를 발견하는 등)할 수도 있고, pull request에 대해 PR 된 버전과 기존의 master 버전을 각각 배포한 url을 PR 쓰레드의 댓글로 달게 할 수도 있다. 
 
-기본적인 사용법은 아래의 링크들을 참조하면 좋을 것 같다.
+## 참고 자료
 
 - [Outsider - GitHub Actions 소개](https://blog.outsider.ne.kr/1412)
 - [css tricks - Introducing GitHub Actions](https://css-tricks.com/introducing-github-actions/)
+- [허원철의 개발 블로그 - GitHub Action을 활용한 GitHub Page 배포](https://heowc.dev/2019/02/03/deploy-gh-page-with-github-action/)
