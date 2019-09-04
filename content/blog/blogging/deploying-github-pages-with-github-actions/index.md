@@ -29,7 +29,7 @@ description: Github blog를 Github에서 제공하는 github actions로 배포�
 
 Github Actions는 2018년에 발표됐고, 현재는 beta 버전이다. 사용하기 위해서는 따로 [등록](https://github.com/features/actions)이 필요하며, 2019년 11월 13일부터 공개 버전으로 기본적인 기능으로 사용할 수 있다.
 
-![sign up for the beta](./signup.png)
+![sign](./signup.png)
 
 `youtube:https://www.youtube.com/embed/E1OunoCyuhY`
 

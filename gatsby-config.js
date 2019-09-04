@@ -27,14 +27,13 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          "gatsby-remark-embed-video",
-          "gatsby-remark-responsive-iframe",
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
             },
           },
+          "gatsby-remark-embed-video",
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
