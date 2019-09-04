@@ -1,7 +1,10 @@
 ---
 title: 탑
 date: "2019-09-04T02:00:00.000Z"
+description: 프로그래머스 코딩테스트 연습
 ---
+
+출처 [프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/42588)
 
 ## 문제 설명
 수평 직선에 탑 N대를 세웠습니다. 모든 탑의 꼭대기에는 신호를 송/수신하는 장치를 설치했습니다. 발사한 신호는 신호를 보낸 탑보다 높은 탑에서만 수신합니다. 또한, 한 번 수신된 신호는 다른 탑으로 송신되지 않습니다.
@@ -58,21 +61,21 @@ heights는 길이 2 이상 100 이하인 정수 배열입니다.
 가장 처음 생각한 건 중첩 for 문을 돌면서 송신한 탑보다 높은 탑이 있는지 한 쪽 방향으로 모두 돌아보는 것이었다. 마치 선택정렬과 같은 방식.
 
 ```javascript
-function solution(heights) {
-    var result = [];
-    for (let i = heights.length - 1; i >= 0; i--) {
-        let received = 0;
-        for (let j = i - 1; j >= 0; j--) {
-            if (heights[j] > heights[i]) {
-                received = j + 1;
-                break;
+    function solution(heights) {
+        var result = [];
+        for (let i = heights.length - 1; i >= 0; i--) {
+            let received = 0;
+            for (let j = i - 1; j >= 0; j--) {
+                if (heights[j] > heights[i]) {
+                    received = j + 1;
+                    break;
+                }
             }
+            result.unshift(received);
         }
-        result.unshift(received);
+        
+        return result;
     }
-    
-    return result;
-}
 ```
 
 이 경우 루프가 중첩되어 빅오 표기법 상 시간 복잡도는 O(n^2). 이를 O(n)으로 줄일 수 있지 않을까 하는 생각에 조금 더 고민하기로 했다. 
