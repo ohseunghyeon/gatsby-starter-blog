@@ -53,13 +53,12 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        서울 사는 <strong>{author}</strong>
-        {` `}
-        <a href={`https://github.com/${social.github}`}>
-          github
+      <p style={{ maxWidth: '200px' }}>
+        Code, be Lazy, be a cat.
+        {' '}
+        <a href={`https://github.com/${social.github}`} target="_blank" rel="noopener noreferrer">
+          {author}
         </a>
-
       </p>
     </div>
   )

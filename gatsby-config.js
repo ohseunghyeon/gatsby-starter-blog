@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Lazy Nyaong`,
-    author: `게으른 고영이`,
+    author: `Oh SeungHyeon`,
     description: `Code, Cat, Lazy`,
     siteUrl: `https://ohseunghyeon.github.io/`,
     social: {
@@ -70,20 +70,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-79205503-1`,
       },
     },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Lazy Nyaong`,
+        short_name: `LazyNyaong`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/profile-pic.png`,
       },
     },
     `gatsby-plugin-offline`,
