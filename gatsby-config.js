@@ -64,6 +64,12 @@ module.exports = {
               }
             }
           },
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+            }
+          },
         ],
       },
     },
@@ -96,5 +102,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+
   ],
 }
