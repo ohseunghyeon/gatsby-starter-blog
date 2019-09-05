@@ -15,6 +15,8 @@ now 라는 bot이 쓴 댓글를 보면 Now가 이 풀 리퀘스트를 자동으�
 
 나도 갖고 싶어.
 
+## 출동
+
 [now 서비스](https://zeit.co/login)를 찾아간다.
 
 ![Log in to ZEIT](./0.5.PNG)
@@ -64,10 +66,6 @@ From a template은 저장소를 새로 만드는 것 같다.
 
 Visit을 누르거나 저 url로 이동하니 내 블로그가 나왔다.
 
-음 신기해.
-
-내가 촌놈이 된 기분이야.
-
 다시 한 번 푸쉬를 했더니 자동으로 배포를 해줬다. 
 
 ![gatsby-blog project after push](./8.PNG)
@@ -75,3 +73,25 @@ Visit을 누르거나 저 url로 이동하니 내 블로그가 나왔다.
 그래그래..
 
 이제 풀 리퀘스트를 했을 때 어떻게 되는지 보고 싶어.
+
+그래서 풀 리퀘스트를 만들어 봤다.
+
+그랬더니 now가 배포중이라고 밑에 달린다.
+
+![being deployed](./9.PNG)
+
+그리고 now 사이트의 `gatsby-blog project` 화면에서도 자동으로 배포중인 내역이 보인다.
+
+![gatsby-blog project after PR](./10.PNG)
+
+마지막으로 배포가 완료된 후 now bot이 단 댓글이 수정되며 해당 브랜치의 주소가 생성된다.
+
+![deploy complete](./11.PNG)
+
+멋져
+
+---
+
+신기해
+
+내가 촌놈이 된 기분이야
