@@ -66,7 +66,7 @@ if it respects REST Conventions
 ## Authentication: Who are you?
 - The Good
   - SSL
-  - SSL Pinning
+  - [SSL Pinning](/study/ssl-pinning/)
   - OAuth
 - The Bad
   - OAuth (she says OAuth is very controversial)
