@@ -13,7 +13,7 @@ description: 새로 만든 Gatsby 블로그를 내 마음대로 뜯어 고치기
 그래서 나는 고치고 싶은 부분들을 리스트로 정리해서 하나하나 하기로 했다.
 
 - [x] emoji 적용하기 :cat: - [gatsby-remark-emojis](https://www.gatsbyjs.org/packages/gatsby-remark-emojis/) 2019.9.3
-- [ ] [github actions로 자동 배포하기](/블로깅/Github-pages를-github-actions로-자동-배포하기/) 2019.9.4~
+- [ ] [github actions로 자동 배포하기](/blogging/deploying-github-pages-with-github-actions/) 2019.9.4~
 - [ ] 글 리스트
 - [ ] 카테고리 넣기
 - [ ] Dark Theme 넣기
