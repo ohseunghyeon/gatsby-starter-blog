@@ -53,7 +53,7 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p style={{ maxWidth: '200px' }}>
+      <p style={{ maxWidth: '180px' }}>
         Code, be Lazy, be a cat.
         {' '}
         <a href={`https://github.com/${social.github}`} target="_blank" rel="noopener noreferrer">
