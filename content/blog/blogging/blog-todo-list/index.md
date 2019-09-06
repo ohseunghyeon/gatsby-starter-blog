@@ -28,3 +28,4 @@ description: 새로 만든 Gatsby 블로그를 내 마음대로 뜯어 고치기
 - [ ] 글 내의 목차
 - [x] now 연동해서 풀 리퀘스트 자동 배포하기
 - [x] [code block theme 설정](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/) - gatsby-browser.js - import "prismjs/themes/prism-tomorrow.css"
+- [ ] excluding draft blog on build
