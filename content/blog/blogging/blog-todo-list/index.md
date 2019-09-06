@@ -17,7 +17,7 @@ description: 새로 만든 Gatsby 블로그를 내 마음대로 뜯어 고치기
 - [ ] 글 리스트
 - [ ] 카테고리 넣기
 - [ ] Dark Theme 넣기
-- [ ] font 가독성 좋게 바꾸기
+- [x] font 가독성 좋게 바꾸기
 - [ ] 새로운 게시글을 만드는 script 생성
 - [ ] about 페이지 만들기
 - [ ] 댓글 달기
@@ -26,3 +26,5 @@ description: 새로 만든 Gatsby 블로그를 내 마음대로 뜯어 고치기
 - [ ] 글 목록 lazy load
 - [ ] 코드들의 스타일이 없다?
 - [ ] 글 내의 목차
+- [x] now 연동해서 풀 리퀘스트 자동 배포하기
+- [x] [code block theme 설정](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/) - gatsby-browser.js - import "prismjs/themes/prism-tomorrow.css"

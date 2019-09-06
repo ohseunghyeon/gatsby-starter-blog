@@ -3,12 +3,6 @@ import GitHub from "typography-theme-github"
 
 GitHub.overrideThemeStyles = () => {
   return {
-    'body': {
-      fontFamily: 'NanumGothic',
-    },
-    'a': {
-      fontFamily: 'NanumGothic'
-    },
     'a:hover': {
       textDecoration: `none`,
     },
@@ -18,6 +12,9 @@ GitHub.overrideThemeStyles = () => {
     },
   }
 }
+
+GitHub.bodyFontFamily = ['NanumGothic'];
+GitHub.aFontFamily = ['NanumGothic'];
 
 const typography = new Typography(GitHub)
 
