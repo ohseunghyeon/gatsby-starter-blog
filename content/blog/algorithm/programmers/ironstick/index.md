@@ -85,14 +85,10 @@ arrangement를 첫 번째부터 마지막까지 순회하면서 레이저와 막
   }
 ```
 
-(if 문을 중첩하면 가독성이 안 좋아서 그냥 둠)
-
-소요 시간: 20분 내
+if 문을 중첩하면 코드 수를 줄일 수 있지만, 가독성이 안 좋을 것 같다
 
 
 ## 다른 사람 풀이
-
-다른 사람 풀이 중 가장 괜찮아 보여서 가져옴
 
 ```javascript
 function solution(arrangement) {
@@ -116,6 +112,7 @@ function solution(arrangement) {
     }
     return answer;
 }
-
-출처: 민종희
 ```
+
+1. 레이저를 걸러내고
+2. 남은 막대만 가지고 경우마다 계산한다.
