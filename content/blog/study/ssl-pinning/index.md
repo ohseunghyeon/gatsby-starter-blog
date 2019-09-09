@@ -67,9 +67,3 @@ Charles proxy를 실행한 상태로 테스트 어플리케이션을 실행하�
 - [Explain SSL Pinning with simple codes](https://medium.com/@zhangqichuan/explain-ssl-pinning-with-simple-codes-eaee95b70507)
 - [SSL TLS에서 사용되는 암호화 스위트 (Cipher Suite) 란 무엇일까?](https://rsec.kr/?p=455)
 - [Android Security: SSL Pinning written by Matthew Dolan](https://medium.com/@appmattus/android-security-ssl-pinning-1db8acb6621e)
-
-## 사족
-
-번역에 대한 허락을 받지 않았습니다.
-
-전 아마 잡혀갈 겁니다..
