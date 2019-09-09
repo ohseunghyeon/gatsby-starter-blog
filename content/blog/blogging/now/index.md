@@ -7,35 +7,27 @@ description: overreacted.io 저장소를 보던 중 발견한 서비스를 내 �
 ## 발단
 
 난 블로그를 이쁘게 만들고 싶다. 그래서 남의 것들을 훔치려고 돌아다니고 있다.
-그러다가 Dan Abramov의 블로그 [overreacted.io](https://overreacted.io/) [깃헙 저장소](https://github.com/gaearon/overreacted.io)를 보게 됐다. 그리고 발견했다. 훔칠 거.
+그러다가 Dan Abramov의 블로그 [overreacted.io](https://overreacted.io/) [깃헙 저장소](https://github.com/gaearon/overreacted.io)를 보게 됐다.
 
 ![풀 리퀘스트에 있는 특정 브랜치의 자동 배포 링크](./0.PNG)
 
 now 라는 bot이 쓴 댓글를 보면 Now가 이 풀 리퀘스트를 자동으로 배포했고, 밑에 링크로 가면 해당 브랜치의 배포판이 있다.
 
-나도 갖고 싶어.
+## 본론
 
-## 출동
-
-[now 서비스](https://zeit.co/login)를 찾아간다.
+[now 서비스](https://zeit.co/login)에 접속
 
 ![Log in to ZEIT](./0.5.PNG)
 
-사이트 메인에 도달하니 ZEIT에 로그인 하란다. 나는 github으로 로그인 했다.
-
-그리고 프로파일을 설정하라고 한다.
+사이트 메인에 접속하니 ZEIT에 로그인을 요구한다. 나는 github으로 로그인 했다. 그리고 프로파일을 설정하라고 한다.
 
 ![set profile](./1.PNG)
-
-응 대충 한다.
 
 깃헙에 Now를 세팅하라고 한다.
 
 ![Github integration](./2.PNG)
 
 ![Install Now](./3.PNG)
-
-응 인스톨 한다.
 
 나는 Only select repositories에 체크해서 `Gatsby-blog` 라는 내 정적 파일 생성기 저장소에 설치했다.
 
@@ -52,11 +44,9 @@ now 라는 bot이 쓴 댓글를 보면 Now가 이 풀 리퀘스트를 자동으�
 From a template은 저장소를 새로 만드는 것 같다.
 나는 From your exsting code에서 `Gatsby-blog` 저장소를 선택했다.
 
-그랬더니
-
 ![gatsby-blog on dashboard](./6.PNG)
 
-알아서 빌드를 하고 배포를 해줬다...?
+그랬더니 알아서 빌드를 하고 배포를 해줬다...?!
 
 저 노란 서클은 배포가 완료되면 초록색으로 바뀐다.
 
@@ -70,13 +60,13 @@ Visit을 누르거나 저 url로 이동하니 내 블로그가 나왔다.
 
 ![gatsby-blog project after push](./8.PNG)
 
-그래그래..
+좋다.
 
-이제 풀 리퀘스트를 했을 때 어떻게 되는지 보고 싶어.
+이제 풀 리퀘스트를 했을 때 어떻게 되는지 보고 싶다.
 
 그래서 풀 리퀘스트를 만들어 봤다.
 
-그랬더니 now가 배포중이라고 밑에 달린다.
+now가 배포중이라고 밑에 달린다.
 
 ![being deployed](./9.PNG)
 
@@ -88,10 +78,4 @@ Visit을 누르거나 저 url로 이동하니 내 블로그가 나왔다.
 
 ![deploy complete](./11.PNG)
 
-멋져
-
----
-
-신기해
-
-내가 촌놈이 된 기분이야
+멋지다
