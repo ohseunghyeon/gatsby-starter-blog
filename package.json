@@ -61,6 +61,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
+    "buildandpublish": "gatsby build && cd .. && rm -rf ./ohseunghyeon.github.io/* && mv ./gatsby-blog/public/* ./ohseunghyeon.github.io/ && cd ohseunghyeon.github.io && git add . && git commit -m \"update article\" && git push"
   }
 }
