@@ -14,18 +14,19 @@ description: 새로 만든 Gatsby 블로그를 내 마음대로 뜯어 고치기
 
 - [x] emoji 적용하기 :cat: - [gatsby-remark-emojis](https://www.gatsbyjs.org/packages/gatsby-remark-emojis/) 2019.9.3
 - [ ] [github actions로 자동 배포하기](/blogging/deploying-github-pages-with-github-actions/) 2019.9.4~
-- [ ] 글 리스트
+- [ ] 홈의 글 리스트는 보여주고 싶은 글만 표시하자
 - [ ] 카테고리 넣기
-- [ ] Dark Theme 넣기
+- [ ] Light/Dark Theme 넣기
 - [x] font 가독성 좋게 바꾸기
 - [ ] 새로운 게시글을 만드는 script 생성
-- [ ] about 페이지 만들기
+- [x] [about 페이지 만들기](http://localhost:8000/blogging/making-about-pages/)
 - [ ] 댓글 달기
 - [ ] 방문자수 ?
 - [ ] 몇 분짜리 글인지 표시
 - [ ] 글 목록 lazy load
-- [ ] 코드들의 스타일이 없다?
 - [ ] 글 내의 목차
 - [x] now 연동해서 풀 리퀘스트 자동 배포하기
 - [x] [code block theme 설정](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/) - gatsby-browser.js - import "prismjs/themes/prism-tomorrow.css"
 - [ ] excluding draft blog on build
+- [ ] 글의 마지막 수정 시간 넣기
+- [x] [이미지 클릭 시 새 창이 아닌 블로그 내에서 띄우기](https://www.gatsbyjs.org/packages/gatsby-remark-images-medium-zoom/)
