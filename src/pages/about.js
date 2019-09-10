@@ -1,10 +1,24 @@
 import React from 'react';
 
-const AboutPage = () => (
-  <main>
-    <h1>Oh SeungHyeon</h1>
-    <p>안녕하세요</p>
-  </main>
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+const AboutPage = ({ location, data }) => (
+  <Layout location={location} title={data.site.siteMetadata.title}>
+    <SEO title="About" />
+    <h1>About Me</h1>
+    <p>안녕하세요 제 블로그에 오신 것을 환영합니다.</p>
+  </Layout>
 )
 
-export default AboutPage;
+export default AboutPage
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`
