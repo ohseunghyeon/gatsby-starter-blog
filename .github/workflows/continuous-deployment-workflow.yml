@@ -1,11 +1,11 @@
-name: Blog Deployment
+name: Blog Deployment # 이 workflow의 이름
 
-on: [push]
+on: [push] # push가 발생할  때 이 workflow를 실행. 특정 브랜치 혹은 특정 파일에 대한 push를 trigger로 설정 가능
 
 jobs:
   build:
     name: Deploying
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # 가상 환경으로 ubuntu, linux, macOs 등을 설정할 수 있다. 
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
