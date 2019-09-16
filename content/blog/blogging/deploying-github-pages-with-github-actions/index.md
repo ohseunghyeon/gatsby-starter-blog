@@ -58,7 +58,8 @@ Gatsby 공식 사이트의 문서에 [Github Pages 관련 배포에 대한 문�
 
 ## Github actions 톺아보기
 
-- workflow 파일은 yml syntax를 사용. 확장자는 .yml or .yaml이다. 참고자료 [Learn YAML in five minutes!](https://www.codeproject.com/Articles/1214409/Learn-YAML-in-five-minutes)
+workflow 파일은 yml syntax를 사용하며 확장자는 `.yml` or `.yaml`이다. yml에 대해 빠르게 알고 싶다면  [Learn YAML in five minutes!](https://www.codeproject.com/Articles/1214409/Learn-YAML-in-five-minutes)를 읽어보라.  
+(Github Actions가 나온 당시에는 HCL syntax라는 것을 사용했지만 2019년 9월 30일 이후로 deprecated 된다)
 
 ### 용어 정리
 
@@ -84,11 +85,41 @@ step은 job에 의해 실행되는 task들의 집합이다. 각 스탭은 job이
 
 #### Action
 
-각각의 task들. 이를 결합하여 steps를 만들고 이는 곧 하나의 job이 된다. (Individual tasks that you combine as steps to create a job) Actions는 workflow에서 가장 작은 조립 블록이다. 당신은 당신의 actions를 만들 수 있고, 이 actions를 깃허브 커뮤니티에 공유하거나, 다른 public actions를 커스터마이즈 할 수 있다. action을 workflow 내에서 사용하기 위해서는 반드시 action을 하나의 step으로써 포함해야 한다. (action === step 인가?)
+각각의 task들. 이를 결합하여 steps를 만들고 이는 곧 하나의 job이 된다(Individual tasks that you combine as steps to create a job). Actions는 workflow에서 가장 작은 조립 블록이다. 당신의 actions를 만들 수 있고, 이 actions를 깃허브 커뮤니티에 공유하거나, 다른 public actions를 커스터마이즈 할 수 있다. action을 workflow 내에서 사용하기 위해서는 반드시 action을 하나의 step으로써 포함해야 한다. (action === step 인가?)
 
 #### Continuous integration (CI)
 
-공유되는 저장소에 작은 코드를 빈번히 커밋할 때 사용되는 software 개발 방법. Github Actions를 가지고 빌드와 테스트를 자동화하기 위한 당신만의 CI workflow를 생성할 수 있다.
+공유되는 저장소에 작은 코드를 빈번히 커밋할 때 사용되는 software 개발 방법. Github Actions를 가지고 빌드와 테스트를 자동화하기 위하여 당신만의 CI workflow를 생성할 수 있다. 저장소에서 workflow의 매 action 의 코드의 변화와 상세한 로그를 확인할 수 있다. CI는 버그를 더 빠르게 찾거나 해결하기 위해, 코드 상의 변화에 대한 즉각적인 반응을 제공하여 개발자의 시간을 절약해준다.
+
+#### Continuous deployment (CD)
+
+CI 상에서 빌드하는 것. 새로운 코드가 커밋되어 CI 테스트를 통과할 때, 그 코드는 자동으로 production에 배포된다. Github Actions를 가지고 당신만의 CD workflow를 만들 수 있으며, 이를 통해 자동으로 당신의 코드를 클라우드나, self-hosted service나 플랫폼에 배포할 수 있다. CD는 개발 과정을 자동화하고 테스트되고 안정된 코드 변화를 더 빠르게 고객에게 배포하여 개발자의 시간을 절약해준다.
+
+#### Virtual environment
+
+Github은 Linux, maxOS, Windows 가상 환경을 제공하여, 당신의 workflow를 돌리게 한다.
+
+#### Runner
+
+각 가상 환경 내의 Github 서비스는 가능한 job을 기다린다. runner가 job을 고르면, job의 actions를 실행하고, 경과, 로그, 결과를 깃헙에게 보고한다. runners는 한 번에 하나의 job을 실행한다.
+
+#### Event
+
+workflow run을 유발하는 특정 동작. 예를 들어 누군가 저장소에 커밋을 푸쉬하거나 이슈 또는 풀리퀘스트가 생성되는 행위.  또한 repository dispatch webhook을 사용한 외부 이벤트 발생을 이벤트로 설정할 수 있다.
+
+#### Artifact
+
+빌드나 코드를 테스트할 때 생성되는 파일. 예를 들어, 바이너리나 패키지 파일, 테스트 결과, 스크린샷, 로그 파일 등이 이에 해당한다. workflow에서 생성된 artifact는 해당 workflow와 관련이 있고, 다른 job에 의해 사용되거나 배포될 수 있다. 
+
+### Workflow 파일 생성
+
+workflow file은 저장소의 root에서 `.github/workflows` 디렉토리를 생성한 후 그 내부에 `.yml`로 생성한다. 내 경우 blog deploy를 위함이므로 `.github/workflows/continuous-deployment-workflow.yml` 정도로 만들겠다. workflow 작성을 위해서"[Configuring a workflow](https://help.github.com/en/articles/configuring-a-workflow)"와 "[Workflow syntax for Github Actions](https://help.github.com/en/articles/workflow-syntax-for-github-actions)"를 참고하기 바란다. 
+
+```yaml
+name: 
+```
+
+
 
 ## 참고 자료
 
