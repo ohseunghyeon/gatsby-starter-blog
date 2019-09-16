@@ -44,6 +44,12 @@ module.exports = {
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+            }
+          },
           `gatsby-remark-smartypants`,
           {
             resolve: 'gatsby-remark-emojis',
@@ -59,12 +65,6 @@ module.exports = {
                 top: '5px',
                 width: '25px'
               }
-            }
-          },
-          {
-            resolve: "gatsby-remark-external-links",
-            options: {
-              target: "_blank",
             }
           },
         ],

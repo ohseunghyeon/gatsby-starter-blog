@@ -9,7 +9,7 @@ Docs에 따르면, Gatsby에서 페이지를 만드는 방법은 3가지가 있�
 2. Gatsby core automatically turns React components in src/pages into pages
 3. Plugins can also implement createPages and create pages for you
 
-저 중 2번을 보면 Gatsby core는 자동으로 src/pages 폴더 내의 파일을 참조하여 해당 파일 이름의 path로 페이지를 생성한다는 내용이 있다.  
+2번을 보면 Gatsby core는 자동으로 src/pages 폴더 내의 파일을 참조하여 해당 파일 이름의 path로 페이지를 생성한다는 내용이 있다.  
 즉, `src/pages/about.js` 파일을 생성하면 `/about`이라는 경로로 페이지가 생성되고 `src/pages/abcd.js` 파일을 생성하면 `abcd`라는 경로로 페이지가 생성된다.
 
 따라서 About 페이지를 만들기 위해서 할 일은 `src/pages/about.js` 파일을 생성하고 다음과 같이 소스를 작성하는 것이다. 그럼 자동으로 `/about` 경로로 페이지가 생성된다.
@@ -47,7 +47,9 @@ export const pageQuery = graphql`
 
 (이 GraphQL Query는 pageQuery라는 변수로 export 되어야 하며, 작성된 컴포넌트의 props로 받게 되는 것 같다)
 
-참고로 개발 서버를 실행하여 [GraphiQL](`localhost:8000/__graphql`)에 접근한 후 다음의 query를 실행하면 생성되는 페이지들의 path와 plugin 정보를 얻게 된다.
+## 개발 중 GraphiQL로 생성된 페이지 목록을 확인하기
+
+개발 서버를 실행하여 [GraphiQL](`localhost:8000/__graphql`)에 접근한 후 다음의 query를 실행하면 생성되는 페이지들의 path와 plugin 정보를 얻게 된다.
 
 ```graphql
 {

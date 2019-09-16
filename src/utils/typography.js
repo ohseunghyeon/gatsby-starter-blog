@@ -1,3 +1,5 @@
+import './global.css';
+
 import Typography from "typography"
 import GitHub from "typography-theme-github"
 
@@ -10,6 +12,9 @@ GitHub.overrideThemeStyles = () => {
       boxShadow: `none`,
       textDecoration: `none`,
     },
+    'body': {
+      wordBreak: `keep-all`
+    }
   }
 }
 

@@ -1,0 +1,24 @@
+body:lang(ko) header,
+body:lang(ko) article {
+  word-break: keep-all;
+}
+
+.gatsby-highlight {
+  margin-bottom: 1.75rem;
+  margin-left: -1.3125rem;
+  margin-right: -1.3125rem;
+  border-radius: 10px;
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+}
+
+@media (max-width: 672px) {
+  .gatsby-highlight {
+    border-radius: 0;
+  }
+}
+
+.gatsby-highlight pre[class*='language-'] {
+  float: left;
+  min-width: 100%;
+}
