@@ -7,13 +7,9 @@ jobs:
     name: Deploying
     runs-on: ubuntu-latest # 가상 환경으로 ubuntu, linux, macOs 등을 설정할 수 있다. 
     steps:
-    # - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - uses: actions/checkout@v1
+      with:
+        repository: ohseunghyeon.github.io
     - run: |
         ls -al
         pwd
