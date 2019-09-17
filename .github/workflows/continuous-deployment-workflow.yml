@@ -1,11 +1,11 @@
-name: Blog Deployment # 이 workflow의 이름
+name: Blog Deployment
 
-on: [push] # push가 발생할  때 이 workflow를 실행. 특정 브랜치 혹은 특정 파일에 대한 push를 trigger로 설정 가능
+on: [push]
 
 jobs:
   build:
-    name: Deploying
-    runs-on: ubuntu-latest # 가상 환경으로 ubuntu, linux, macOs 등을 설정할 수 있다. 
+    name: build
+    runs-on: ubuntu-latest
     steps:
     - name: Dump GitHub context
       env:
@@ -17,12 +17,13 @@ jobs:
       with:
         path: 'static-site-generator'
 
-    - run: ls ../
-
     - name: git config
+      env:
+        USER_NAME: ${{ github.event.pusher.name }}
+        USER_EMAIL: ${{ github.event.pusher.email }}
       run: |
-        git config --global user.email "postercolo@gmail.com"
-        git config --global user.name "ohseunghyeon"
+        git config --global user.email "$USER_EMAIL"
+        git config --global user.name "$USER_NAME"
 
     # 참고: https://cupfullofcode.com/blog/2018/12/21/deploying-hugo-with-github-actions/
     - name: make deploy keys

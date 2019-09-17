@@ -54,9 +54,10 @@ Gatsby 공식 사이트의 문서에 [Github Pages 관련 배포에 대한 문�
 
 ![actions button](./actions_button.PNG)
 
-위와 같이 깃허브 저장소에 가면 Actions 버튼이 있다. 이는 Github Actions Beta를 신청하여 승인 이메일을 받은 경우에만 활성화된다.
+위와 같이 깃허브 저장소에 가면 Actions 버튼이 있다.  
+(Github Actions Beta를 신청하여 승인 이메일을 받은 경우에만 활성화된다.)
 
-Actions 버튼을 누르면 Workflow 파일을 생성할 수 있는 페이지가 나온다. 해당 페이지에서 `Add a new workflow`를 눌러서 workflow 파일을 GUI 상에서 생성해도 되고, 직접 파일을 만들어도 된다. 나의 경우 직접 만들어서 진행하겠다.
+Actions 버튼을 누르면 Workflow 파일을 생성할 수 있는 페이지가 나온다. 해당 페이지에서 **Add a new workflow** 버튼을 눌러서 workflow 파일을 GUI 상에서 생성해도 되고, 직접 파일을 만들어도 된다. 나의 경우 직접 만들어서 진행하겠다.
 
 ### Workflow 파일 생성
 
@@ -66,6 +67,139 @@ Workflow 파일은 저장소의 root에서 **.github/workflows** 디렉토리를
 /.github/workflows/continuous-deployment-workflow.yml
 ```
 
+아래는 배포를 위해 만든 workflow 파일이다
+
+```yml
+name: Blog Deployment
+
+on: [push]
+
+jobs:
+  build:
+    name: Deploying
+    runs-on: ubuntu-latest # 가상 환경으로 ubuntu, linux, macOs 등을 설정할 수 있다.
+    steps:
+    - name: clone gatsby-blog
+      uses: actions/checkout@master
+      with:
+        path: 'static-site-generator'
+
+    - name: git config
+      env:
+        USER_NAME: ${{ github.event.pusher.name }}
+        USER_EMAIL: ${{ github.event.pusher.email }}
+      run: |
+        git config --global user.email "$USER_EMAIL"
+        git config --global user.name "$USER_NAME"
+
+    # 참고: https://cupfullofcode.com/blog/2018/12/21/deploying-hugo-with-github-actions/
+    - name: make deploy keys
+      env:
+        GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}
+      run: |
+        mkdir -p ~/.ssh/
+        echo "$GH_ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+    - name: clone static_site_repo
+      run: |
+        cd ..
+        git clone git@github.com:ohseunghyeon/ohseunghyeon.github.io.git static_site_repo
+
+
+    - name: install dependencies & build
+      run: |
+        yarn
+        yarn build
+
+    - name: move build files to static files repo
+      run: |
+        rm -rf ../static_site_repo/*
+        mv ./public/* ../static_site_repo
+
+    - name: push changed files
+      run: |
+        cd ../static_site_repo
+        git add .
+        git commit -m "$(git -C ../static-site-generator/ log --format=%B -n 1)"
+        git push origin master
+```
+
+먼저 최상위에 정의된 name, on, jobs를 살펴보자
+
+```yml
+name: Blog Deployment
+
+on: [push]
+
+jobs: ...
+```
+
+- `name`: Workflow의 이름
+- `on`: 여기에 기술된 이벤트에 의해 이 workflow가 작동한다. 특정 동작일 수도 있고, schedule이 될 수도 있다. 나의 경우 해당 브랜치에서 push가 발생할 때 이 workflow를 실행한다. 특정 브랜치, 특정 파일에 의한 trigger도 지정 가능하다. 자세한 내용은 [Event Trigger](https://help.github.com/en/articles/events-that-trigger-workflows)를 참고하라.
+- `jobs`: job이란 workflow에서 실행할 작업의 단위이다.
+
+다음으로 내가 설정한 job을 보자
+
+```yml
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      ...
+```
+
+`jobs` 아래에 위치한 **build**는 job이다. 해당 job 엔 name, runs-on, steps가 있다.
+
+- `name`: job의 이름. 생략 가능하다.
+- `runs-on`: 해당 job을 실행할 가상 환경으로 ubuntu, linux, macOs 로 설정할 수 있다.
+- `steps`: step은 Job이 실행되는 하나의 가상 환경에서 이루어질 일련의 작업이다. job이 추상적인 단위라면 step은 좀 더 실질적인 단위로, command나 action을 실행할 수 있다.
+
+개념이 너무 많아서 헷갈릴 수 있다. 일단 끝까지 읽고 또 읽든지 다른 참고 자료를 찾아서 공부하는 게 좋다
+
+다음은 각각의 step들을 하나씩 살펴보자
+
+```yml
+steps:
+- name: install dependencies & build
+  run: |
+    yarn
+    yarn build
+```
+
+`name`과 `run`이 있다. name은 생략 가능하며 이 때 name은 알아서 정해진다. 그리고 run은 command를 실행한다. command는 다음과 같이 한 줄 또는 여러줄로 생성 가능하다.
+
+```yml
+# single line
+steps:
+- run: yarn
+
+# multiple lines
+- run: |
+  yarn
+  yarn build
+  ...
+```
+
+다른 step을 살펴보자
+
+```yml
+steps:
+- name: git config
+  env:
+    USER_NAME: ${{ github.event.pusher.name }}
+    USER_EMAIL: ${{ github.event.pusher.email }}
+  run: |
+    echo "$USER_EMAIL"
+    git config --global user.email "$USER_EMAIL"
+    git config --global user.name "$USER_NAME"
+```
+
+`env`가 있다. 아무 값이나 넣어서 설정할 수 있다. 그런데 `${{ github.event.pusher.name }}`는 뭘까? 이건 actions에서 제공하는 context를 사용하는 방법이다. github이라는 context 아래에 있는 event.pusher.name를 환경변수 USER_NAME과 USER_EMAIL로 각각 설정하는 것이다.
+
+
 ## 참고
 
 - yml에 대해 빠르게 알고 싶다면 [Learn YAML in five minutes!](https://www.codeproject.com/Articles/1214409/Learn-YAML-in-five-minutes)을 참고하라.
@@ -74,7 +208,7 @@ Workflow 파일은 저장소의 root에서 **.github/workflows** 디렉토리를
 
 - workflow 작성법을 알고 싶다면 [Configuring a workflow](https://help.github.com/en/articles/configuring-a-workflow)와 [Workflow syntax for Github Actions](https://help.github.com/en/articles/workflow-syntax-for-github-actions)를 참고하길 바란다.
 
-- List of [Event Trigger](https://help.github.com/en/articles/events-that-trigger-workflows)
+- List of 
 
 - 매 액션은 경로를 그 repo로 갖고 시작한다.
 
