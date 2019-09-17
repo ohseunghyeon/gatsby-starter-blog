@@ -13,36 +13,42 @@ jobs:
         repository: ohseunghyeon/ohseunghyeon.github.io
         ref: master
 
-    - name: clone gatsby- repository
-      uses: actions/checkout@v1
+    # - name: clone gatsby- repository
+    #   uses: actions/checkout@v1
 
-    - name: install dependencies
-      run: yarn
+    # - name: install dependencies
+    #   run: yarn
 
-    - name: gatsby build
-      run: yarn build
+    # - name: gatsby build
+    #   run: yarn build
 
-    - name: check static files
-      run: ls -al ../ohseunghyeon.github.io
+    # - name: check static files
+    #   run: ls -al ../ohseunghyeon.github.io
 
-    - name: empty static file repo
-      run: rm -rf ../ohseunghyeon.github.io/*
+    # - name: empty static file repo
+    #   run: rm -rf ../ohseunghyeon.github.io/*
     
-    - run: |
-        pwd
-        ls -al ../ohseunghyeon.github.io
+    # - run: |
+    #     pwd
+    #     ls -al ../ohseunghyeon.github.io
 
-    - name: move build files to static repo
-      run: mv ./public/* ../ohseunghyeon.github.io
+    # - name: move build files to static repo
+    #   run: mv ./public/* ../ohseunghyeon.github.io
     
-    - name: check static files
-      run: ls -al ../ohseunghyeon.github.io
+    # - name: check static files
+    #   run: ls -al ../ohseunghyeon.github.io
     
     - name: cd to static file repo
       run: cd ../ohseunghyeon.github.io
-    
+
+    - run: touch abc
+
     - name: git status
       run: git status
+    - run: git checkout master
+    - run: |
+        git status
+        git log
     
     - name: git commit
       run: |
