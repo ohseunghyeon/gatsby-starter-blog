@@ -317,6 +317,9 @@ Key가 준비되었다면 다음과 같이 저장소에 접근하기 위해 Depl
 
 아래 용어들은 [About GitHub Actions](https://help.github.com/en/articles/about-github-actions#workflow)의 번역본입니다.
 
+<details>
+<summary>여기를 눌러서 보기</summary>
+
 #### Workflow
 
 설정 가능한 자동화된 프로세스. 깃허브에 있는 프로젝트를 빌드, 테스트, 패키지, 릴리즈, 배포를 하기 위해서 저장소 내에 셋업할 수 있다. Workflow는 하나 이상의 job들로 이루어져 있으며, 스케쥴 또는 이벤트에 의해 활성화될 수 있다.
@@ -364,6 +367,8 @@ workflow run을 유발하는 특정 동작. 예를 들어 누군가 저장소에
 #### Artifact
 
 빌드나 코드를 테스트할 때 생성되는 파일. 예를 들어, 바이너리나 패키지 파일, 테스트 결과, 스크린샷, 로그 파일 등이 이에 해당한다. workflow에서 생성된 artifact는 해당 workflow와 관련이 있고, 다른 job에 의해 사용되거나 배포될 수 있다.
+
+</details>
 
 ## 참고 자료
 
