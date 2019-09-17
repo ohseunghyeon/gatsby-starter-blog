@@ -118,6 +118,8 @@ List of [Event Trigger](https://help.github.com/en/articles/events-that-trigger-
 
 - 매 액션은 경로를 그 repo로 갖고 시작한다.
 
+https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line
+
 ## 참고 자료
 
 - [Outsider - GitHub Actions 소개](https://blog.outsider.ne.kr/1412)
