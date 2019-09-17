@@ -15,7 +15,7 @@ jobs:
     - name: clone repository
       uses: actions/checkout@v1
     - run: |
-        yarn
+        yarn build
         # ls -al
         # pwd
         # cd ..
