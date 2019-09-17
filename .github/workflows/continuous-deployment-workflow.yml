@@ -36,5 +36,7 @@ jobs:
         git checkout master
         touch abc
         git add .
+        echo 1
         git commit -m "$(git -C ../gatsby-blog/ log --format=%B -n 1)"
+        echo 2
         git -c http.extraheader="AUTHORIZATION: basic ${{github.token}}" push
