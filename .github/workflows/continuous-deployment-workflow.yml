@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
       with:
-        repository: ohseunghyeon.github.io
+        repository: ohseunghyeon/ohseunghyeon.github.io
     - run: |
         ls -al
         pwd
