@@ -12,9 +12,6 @@ GitHub.overrideThemeStyles = () => {
       boxShadow: `none`,
       textDecoration: `none`,
     },
-    'body': {
-      wordBreak: `keep-all`
-    }
   }
 }
 

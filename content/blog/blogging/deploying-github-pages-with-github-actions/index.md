@@ -4,19 +4,15 @@ date: "2019-09-04T02:47:08.633Z"
 description: Github blog를 Github에서 제공하는 github actions로 배포하기
 ---
 
-블로그를 자동으로 배포하고 싶다. 수동으로 하는 방법은 너무 번거롭기 때문이다.
-
-나의 경우 Github pages를 운영하기 위해서 두 개의 저장소가 필요하다.
-(username.github.io 저장소에 두 개의 브랜치를 사용해도 된다.)
+나는 Github pages를 운영하기 위해서 두 개의 저장소를 사용하고 있다.
 
 ```
 - username.github.io 저장소 (static files)
 - 블로그 생성기 저장소 (gatsby - static site generater)
 ```
 
-따라서 수동으로 블로그를 배포하기 위해서는 블로그의 정적 파일들을 생성하고, 이를 **username.github.io** 리포에 푸쉬해야 한다.
-
-이를 바탕으로 배포를 어떻게 자동화 할 수 있을까 생각하다가 두 개 정도의 선택지를 발견했다.
+따라서 수동으로 블로그를 배포하기 위해서는 블로그의 정적 파일들을 생성하고, 이를 **username.github.io** 저장소에 푸쉬해야 한다.  
+이 과정을 어떻게 자동화 할 수 있을까 생각하다가 두 개 정도의 선택지로 추렸다.
 
 ```
 1. Netlify (또는 배포 자동화를 제공하는 서비스)
@@ -43,9 +39,9 @@ Github Actions는 깃헙 저장소의 push, pull request 등 미리 정의된 �
 
 ## 어떻게 배포할까
 
-우선 내 경우 **정적 사이트 생성기**와 **github pages**의 저장소가 따로 존재한다.
+내 경우는 **정적 사이트 생성기**와 **github pages** 저장소가 따로 존재한다.
 
-Gatsby 공식 사이트의 문서에 [Github Pages 관련 배포에 대한 문서](https://www.gatsbyjs.org/docs/how-gatsby-works-with-github-pages/)가 있으나 이는 한 저장소 내에 정적 사이트 생성기와 정적 파일이 브랜치로 구분되어 있는 경우를 설명하는 것이기에 나의 경우와는 관련이 없다.
+Gatsby 공식 사이트의 문서에 [Github Pages 관련 배포에 대한 문서](https://www.gatsbyjs.org/docs/how-gatsby-works-with-github-pages/)가 있으나 이는 한 저장소 내에 정적 사이트 생성기와 정적 파일이 *브랜치*로 구분되어 있는 경우를 설명하는 것이기에 나의 경우와는 관련이 없다.
 
 내 경우는 배포를 위해서
 
@@ -58,8 +54,8 @@ Gatsby 공식 사이트의 문서에 [Github Pages 관련 배포에 대한 문�
 
 ## Github actions 톺아보기
 
-workflow 파일은 yml syntax를 사용하며 확장자는 `.yml` or `.yaml`이다. yml에 대해 빠르게 알고 싶다면  [Learn YAML in five minutes!](https://www.codeproject.com/Articles/1214409/Learn-YAML-in-five-minutes)를 읽어보라.  
-(Github Actions가 나온 당시에는 HCL syntax라는 것을 사용했지만 2019년 9월 30일 이후로 deprecated 된다)
+workflow 파일은 yml syntax를 사용하며 확장자는 `.yml` or `.yaml`이다. yml에 대해 빠르게 알고 싶다면 [Learn YAML in five minutes!](https://www.codeproject.com/Articles/1214409/Learn-YAML-in-five-minutes)를 읽어보라.  
+참고로 Github Actions가 나온 당시에는 HCL syntax라는 것을 사용했지만 2019년 9월 30일 이후로 deprecated 된다.
 
 ### 용어 정리
 
@@ -85,7 +81,7 @@ step은 job에 의해 실행되는 task들의 집합이다. 각 스탭은 job이
 
 #### Action
 
-각각의 task들. 이를 결합하여 steps를 만들고 이는 곧 하나의 job이 된다(Individual tasks that you combine as steps to create a job). Actions는 workflow에서 가장 작은 조립 블록이다. 당신의 actions를 만들 수 있고, 이 actions를 깃허브 커뮤니티에 공유하거나, 다른 public actions를 커스터마이즈 할 수 있다. action을 workflow 내에서 사용하기 위해서는 반드시 action을 하나의 step으로써 포함해야 한다. (action === step 인가?)
+각각의 task들. 이를 결합하여 steps를 만들고 이는 곧 하나의 job이 된다(Individual tasks that you combine as steps to create a job). Action은 workflow에서 가장 작은 조립 블록이다. 당신의 actions를 만들 수 있고, 이 action을 깃허브 커뮤니티에 공유하거나, 다른 public action를 커스터마이즈 할 수도 있다. action을 workflow 내에서 사용하기 위해서는 반드시 action을 하나의 step으로써 포함해야 한다. (action === step 인가?)
 
 #### Continuous integration (CI)
 
@@ -109,17 +105,15 @@ workflow run을 유발하는 특정 동작. 예를 들어 누군가 저장소에
 
 #### Artifact
 
-빌드나 코드를 테스트할 때 생성되는 파일. 예를 들어, 바이너리나 패키지 파일, 테스트 결과, 스크린샷, 로그 파일 등이 이에 해당한다. workflow에서 생성된 artifact는 해당 workflow와 관련이 있고, 다른 job에 의해 사용되거나 배포될 수 있다. 
+빌드나 코드를 테스트할 때 생성되는 파일. 예를 들어, 바이너리나 패키지 파일, 테스트 결과, 스크린샷, 로그 파일 등이 이에 해당한다. workflow에서 생성된 artifact는 해당 workflow와 관련이 있고, 다른 job에 의해 사용되거나 배포될 수 있다.
 
 ### Workflow 파일 생성
 
-workflow file은 저장소의 root에서 `.github/workflows` 디렉토리를 생성한 후 그 내부에 `.yml`로 생성한다. 내 경우 blog deploy를 위함이므로 `.github/workflows/continuous-deployment-workflow.yml` 정도로 만들겠다. workflow 작성을 위해서"[Configuring a workflow](https://help.github.com/en/articles/configuring-a-workflow)"와 "[Workflow syntax for Github Actions](https://help.github.com/en/articles/workflow-syntax-for-github-actions)"를 참고하기 바란다. 
+workflow file은 저장소의 root에서 `.github/workflows` 디렉토리를 생성한 후 그 내부에 `.yml`로 생성한다. 내 경우 blog deploy를 위해 `.github/workflows/continuous-deployment-workflow.yml`로 만들겠다.
 
-```yaml
-name: 
-```
+workflow 작성법을 알고 싶다면 [Configuring a workflow](https://help.github.com/en/articles/configuring-a-workflow)와 [Workflow syntax for Github Actions](https://help.github.com/en/articles/workflow-syntax-for-github-actions)를 참고하길 바란다.
 
-
+List of [Event Trigger](https://help.github.com/en/articles/events-that-trigger-workflows)
 
 ## 참고 자료
 
