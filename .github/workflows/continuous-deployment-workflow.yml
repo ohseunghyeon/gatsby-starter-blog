@@ -13,8 +13,8 @@ jobs:
         repository: ohseunghyeon/ohseunghyeon.github.io
         ref: master
 
-    # - name: clone gatsby-blog
-    #   uses: actions/checkout@v1
+    - name: clone gatsby-blog
+      uses: actions/checkout@v1
 
     # - name: install dependencies
     #   run: yarn
