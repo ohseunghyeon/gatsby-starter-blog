@@ -31,6 +31,24 @@ jobs:
     - run: |
         pwd
         ls -al ../ohseunghyeon.github.io
+
+    - name: move build files to static repo
+      run: mv ./public/* ../ohseunghyeon.github.io
+    
+    - name: check static files
+      run: ls -al ../ohseunghyeon.github.io
+    
+    - name: cd to static file repo
+      run: cd ../ohseunghyeon.github.io
+    
+    - name: git status
+      run: git status
+    
+    - name: git commit
+      run: |
+        git add .
+        git commit -m "test"
+        git push
         # ls -al
         # pwd
         # cd ..
