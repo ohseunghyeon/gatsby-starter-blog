@@ -7,54 +7,26 @@ jobs:
     name: Deploying
     runs-on: ubuntu-latest # 가상 환경으로 ubuntu, linux, macOs 등을 설정할 수 있다. 
     steps:
-    # - name: clone ohseunghyeon.github.io
-    #   uses: actions/checkout@v1
-    #   with:
-    #     repository: ohseunghyeon/ohseunghyeon.github.io
-    #     ref: master
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
-    - name: Dump job context
-      env:
-        JOB_CONTEXT: ${{ toJson(job) }}
-      run: echo "$JOB_CONTEXT"
-    - name: Dump steps context
-      env:
-        STEPS_CONTEXT: ${{ toJson(steps) }}
-      run: echo "$STEPS_CONTEXT"
-    - name: Dump runner context
-      env:
-        RUNNER_CONTEXT: ${{ toJson(runner) }}
-      run: echo "$RUNNER_CONTEXT"
-    - name: Dump strategy context
-      env:
-        STRATEGY_CONTEXT: ${{ toJson(strategy) }}
-      run: echo "$STRATEGY_CONTEXT"
-    - name: Dump matrix context
-      env:
-        MATRIX_CONTEXT: ${{ toJson(matrix) }}
-      run: echo "$MATRIX_CONTEXT"
-
-    - name: clone gatsby-blog
+    - name: clone ohseunghyeon.github.io
       uses: actions/checkout@v1
+      with:
+        repository: ohseunghyeon/ohseunghyeon.github.io
+        ref: master
 
-    - name: install dependencies
-      run: yarn
+    # - name: clone gatsby-blog
+    #   uses: actions/checkout@v1
 
-    - name: gatsby build
-      run: yarn build
+    # - name: install dependencies
+    #   run: yarn
 
-    - run: |
-        cd ..
-        git clone git@github.com:ohseunghyeon/ohseunghyeon.github.io.git
+    # - name: gatsby build
+    #   run: yarn build
 
-    - name: empty static file repo
-      run: rm -rf ../ohseunghyeon.github.io/*
+    # - name: empty static file repo
+    #   run: rm -rf ../ohseunghyeon.github.io/*
 
-    - name: move build files to static repo
-      run: mv ./public/* ../ohseunghyeon.github.io
+    # - name: move build files to static repo
+    #   run: mv ./public/* ../ohseunghyeon.github.io
 
     - name: push changed files
       run: |
@@ -62,6 +34,7 @@ jobs:
         git config --global user.name "ohseunghyeon"
         cd ../ohseunghyeon.github.io
         git checkout master
+        touch abc
         git add .
         git commit -m "$(git -C ../gatsby-blog/ log --format=%B -n 1)"
-        git push
+        git -c http.extraheader="AUTHORIZATION: basic ${{github.token}}" push
