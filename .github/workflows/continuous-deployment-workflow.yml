@@ -39,23 +39,24 @@ jobs:
     #   run: ls -al ../ohseunghyeon.github.io
     
     - name: cd to static file repo
-      run: cd ../ohseunghyeon.github.io
-
-    - run: |
+      run: |
+        cd ../ohseunghyeon.github.io
         pwd
         touch abc
         ls -al
-    - run: git checkout master
-    - run: git status
-    - run: |
+        git status
+        git log    
+        git checkout master
+        git status
+        touch abc
         git status
         git log
-    
-    - name: git commit
-      run: |
         git add .
-        git commit -m "test"
-        git push
+    # - name: git commit
+    #   run: |
+    #     git add .
+    #     git commit -m "test"
+    #     git push
         # ls -al
         # pwd
         # cd ..
