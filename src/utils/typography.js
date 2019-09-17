@@ -12,6 +12,9 @@ GitHub.overrideThemeStyles = () => {
       boxShadow: `none`,
       textDecoration: `none`,
     },
+    'h1, h2, h3': {
+      marginTop: `2.625rem`
+    }
   }
 }
 

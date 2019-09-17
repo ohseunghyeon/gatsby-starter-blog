@@ -7,11 +7,6 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     steps:
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
-
     - name: clone gatsby-blog
       uses: actions/checkout@master
       with:
@@ -25,7 +20,6 @@ jobs:
         git config --global user.email "$USER_EMAIL"
         git config --global user.name "$USER_NAME"
 
-    # 참고: https://cupfullofcode.com/blog/2018/12/21/deploying-hugo-with-github-actions/
     - name: make deploy keys
       env:
         GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}
@@ -39,7 +33,6 @@ jobs:
       run: |
         cd ..
         git clone git@github.com:ohseunghyeon/ohseunghyeon.github.io.git static_site_repo
-
 
     - name: install dependencies & build
       run: |
