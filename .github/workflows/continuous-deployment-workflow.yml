@@ -12,10 +12,25 @@ jobs:
       with:
         repository: ohseunghyeon/ohseunghyeon.github.io
         ref: master
-    - name: clone repository
+
+    - name: clone gatsby- repository
       uses: actions/checkout@v1
+
+    - name: install dependencies
+      run: yarn
+
+    - name: gatsby build
+      run: yarn build
+
+    - name: check static files
+      run: ls -al ../ohseunghyeon.github.io
+
+    - name: empty static file repo
+      run: rm -rf ../ohseunghyeon.github.io/*
+    
     - run: |
-        yarn build
+        pwd
+        ls -al ../ohseunghyeon.github.io
         # ls -al
         # pwd
         # cd ..
