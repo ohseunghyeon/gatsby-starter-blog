@@ -30,8 +30,10 @@ jobs:
 
     - name: push changed files
       run: |
+        git config --global user.email "postercolo@gmail.com"
+        git config --global user.name "ohseunghyeon"
         cd ../ohseunghyeon.github.io
         git checkout master
         git add .
-        git commit -m "$(git --git-dir ../gatsby-blog/.git log --format=%B -n 1)"
+        git commit -m "$(git -C ../gatsby-blog/ log --format=%B -n 1)"
         git push
