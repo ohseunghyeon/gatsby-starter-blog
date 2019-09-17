@@ -120,6 +120,12 @@ List of [Event Trigger](https://help.github.com/en/articles/events-that-trigger-
 
 https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line
 
+// making ssh-key
+https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key
+
+// deploy-key
+https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys
+
 ## 참고 자료
 
 - [Outsider - GitHub Actions 소개](https://blog.outsider.ne.kr/1412)
