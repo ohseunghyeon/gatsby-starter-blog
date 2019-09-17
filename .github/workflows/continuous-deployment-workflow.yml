@@ -41,11 +41,12 @@ jobs:
     - name: cd to static file repo
       run: cd ../ohseunghyeon.github.io
 
-    - run: touch abc
-
-    - name: git status
-      run: git status
+    - run: |
+        pwd
+        touch abc
+        ls -al
     - run: git checkout master
+    - run: git status
     - run: |
         git status
         git log
