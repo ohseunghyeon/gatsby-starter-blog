@@ -13,57 +13,25 @@ jobs:
         repository: ohseunghyeon/ohseunghyeon.github.io
         ref: master
 
-    # - name: clone gatsby- repository
-    #   uses: actions/checkout@v1
+    - name: clone gatsby- repository
+      uses: actions/checkout@v1
 
-    # - name: install dependencies
-    #   run: yarn
+    - name: install dependencies
+      run: yarn
 
-    # - name: gatsby build
-    #   run: yarn build
+    - name: gatsby build
+      run: yarn build
 
-    # - name: check static files
-    #   run: ls -al ../ohseunghyeon.github.io
+    - name: empty static file repo
+      run: rm -rf ../ohseunghyeon.github.io/*
 
-    # - name: empty static file repo
-    #   run: rm -rf ../ohseunghyeon.github.io/*
-    
-    # - run: |
-    #     pwd
-    #     ls -al ../ohseunghyeon.github.io
+    - name: move build files to static repo
+      run: mv ./public/* ../ohseunghyeon.github.io
 
-    # - name: move build files to static repo
-    #   run: mv ./public/* ../ohseunghyeon.github.io
-    
-    # - name: check static files
-    #   run: ls -al ../ohseunghyeon.github.io
-    
-    - name: cd to static file repo
+    - name: push changed files
       run: |
         cd ../ohseunghyeon.github.io
-        echo 1
-        pwd
-        touch abc
-        echo 2
-        ls -al
-        echo 3
-        git status
-        echo 4
         git checkout master
-        echo 5
-        git status
-        echo 6
         git add .
-    # - name: git commit
-    #   run: |
-    #     git add .
-    #     git commit -m "test"
-    #     git push
-        # ls -al
-        # pwd
-        # cd ..
-        # pwd
-        # ls -al
-        # cd ohseunghyeon.github.io
-        # pwd
-        # ls -al
+        git commit -m "$(git --git-dir ../gatsby-blog/.git log --format=%B -n 1)"
+        git push
