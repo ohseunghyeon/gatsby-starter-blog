@@ -9,8 +9,8 @@ jobs:
     steps:
     - name: clone ohseunghyeon.github.io
       run: |
-      cd ..
-      git clone https://github.com/ohseunghyeon/ohseunghyeon.github.io.git
+        cd ..
+        git clone https://github.com/ohseunghyeon/ohseunghyeon.github.io.git
       # uses: actions/checkout@v1
       # with:
       #   repository: ohseunghyeon/ohseunghyeon.github.io
