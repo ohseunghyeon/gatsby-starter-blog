@@ -30,24 +30,21 @@ jobs:
     - name: clone gatsby-blog
       uses: actions/checkout@v1
 
-    # - name: install dependencies
-    #   run: yarn
+    - name: install dependencies
+      run: yarn
 
-    # - name: gatsby build
-    #   run: yarn build
+    - name: gatsby build
+      run: yarn build
 
-    # - name: empty static file repo
-    #   run: rm -rf ../ohseunghyeon.github.io/*
+    - name: empty static file repo
+      run: rm -rf ../ohseunghyeon.github.io/*
 
-    # - name: move build files to static repo
-    #   run: mv ./public/* ../ohseunghyeon.github.io
+    - name: move build files to static repo
+      run: mv ./public/* ../ohseunghyeon.github.io
 
     - name: push changed files
       run: |
         cd ../ohseunghyeon.github.io
-        touch abc
         git add .
-        echo 1
         git commit -m "$(git -C ../gatsby-blog/ log --format=%B -n 1)"
-        echo 2
         git push origin master
