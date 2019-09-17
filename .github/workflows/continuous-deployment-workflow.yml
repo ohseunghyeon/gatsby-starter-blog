@@ -7,13 +7,19 @@ jobs:
     name: Deploying
     runs-on: ubuntu-latest # 가상 환경으로 ubuntu, linux, macOs 등을 설정할 수 있다. 
     steps:
-    - uses: actions/checkout@v1
+    - name: clone ohseunghyeon.github.io
+      uses: actions/checkout@v1
       with:
         repository: ohseunghyeon/ohseunghyeon.github.io
         ref: master
+    - name: clone repository
+      uses: actions/checkout@v1
     - run: |
         ls -al
         pwd
         cd ..
+        pwd
+        ls -al
+        cd ohseunghyeon.github.io
         pwd
         ls -al
