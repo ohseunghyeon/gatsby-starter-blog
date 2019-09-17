@@ -34,14 +34,12 @@ jobs:
 
     - name: push changed files
       run: |
-        git config --global user.email "postercolo@gmail.com"
-        git config --global user.name "ohseunghyeon"
         cd ../ohseunghyeon.github.io
-        git checkout master
+        git config user.email "postercolo@gmail.com"
+        git config user.name "ohseunghyeon"
         touch abc
         git add .
         echo 1
         git commit -m "$(git -C ../gatsby-blog/ log --format=%B -n 1)"
-        git remote -v
         echo 2
         git -c http.extraheader="AUTHORIZATION: basic ${{github.token}}" push origin master
