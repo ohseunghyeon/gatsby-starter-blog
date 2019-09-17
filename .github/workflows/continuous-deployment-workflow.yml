@@ -7,6 +7,18 @@ jobs:
     name: Deploying
     runs-on: ubuntu-latest # 가상 환경으로 ubuntu, linux, macOs 등을 설정할 수 있다. 
     steps:
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+
+    - name: clone gatsby-blog
+      uses: actions/checkout@master
+      with:
+        path: 'static-site-generator'
+
+    - run: ls ../
+
     - name: git config
       run: |
         git config --global user.email "postercolo@gmail.com"
@@ -22,29 +34,25 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-    - name: clone ohseunghyeon.github.io
+    - name: clone static_site_repo
       run: |
         cd ..
-        git clone git@github.com:ohseunghyeon/ohseunghyeon.github.io.git
+        git clone git@github.com:ohseunghyeon/ohseunghyeon.github.io.git static_site_repo
 
-    - name: clone gatsby-blog
-      uses: actions/checkout@v1
 
-    - name: install dependencies
-      run: yarn
+    - name: install dependencies & build
+      run: |
+        yarn
+        yarn build
 
-    - name: gatsby build
-      run: yarn build
-
-    - name: empty static file repo
-      run: rm -rf ../ohseunghyeon.github.io/*
-
-    - name: move build files to static repo
-      run: mv ./public/* ../ohseunghyeon.github.io
+    - name: move build files to static files repo
+      run: |
+        rm -rf ../static_site_repo/*
+        mv ./public/* ../static_site_repo
 
     - name: push changed files
       run: |
-        cd ../ohseunghyeon.github.io
+        cd ../static_site_repo
         git add .
-        git commit -m "$(git -C ../gatsby-blog/ log --format=%B -n 1)"
+        git commit -m "$(git -C ../static-site-generator/ log --format=%B -n 1)"
         git push origin master
