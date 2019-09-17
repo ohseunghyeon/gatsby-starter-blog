@@ -10,6 +10,7 @@ jobs:
     - uses: actions/checkout@v1
       with:
         repository: ohseunghyeon/ohseunghyeon.github.io
+        ref: master
     - run: |
         ls -al
         pwd
