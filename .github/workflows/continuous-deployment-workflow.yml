@@ -41,16 +41,18 @@ jobs:
     - name: cd to static file repo
       run: |
         cd ../ohseunghyeon.github.io
+        echo 1
         pwd
         touch abc
+        echo 2
         ls -al
+        echo 3
         git status
-        git log    
+        echo 4
         git checkout master
+        echo 5
         git status
-        touch abc
-        git status
-        git log
+        echo 6
         git add .
     # - name: git commit
     #   run: |
