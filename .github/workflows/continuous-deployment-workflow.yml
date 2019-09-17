@@ -8,10 +8,14 @@ jobs:
     runs-on: ubuntu-latest # 가상 환경으로 ubuntu, linux, macOs 등을 설정할 수 있다. 
     steps:
     - name: clone ohseunghyeon.github.io
-      uses: actions/checkout@v1
-      with:
-        repository: ohseunghyeon/ohseunghyeon.github.io
-        ref: master
+      run: |
+      cd ..
+      git clone https://github.com/ohseunghyeon/ohseunghyeon.github.io.git
+      # uses: actions/checkout@v1
+      # with:
+      #   repository: ohseunghyeon/ohseunghyeon.github.io
+      #   ref: master
+      
 
     - name: clone gatsby-blog
       uses: actions/checkout@v1
