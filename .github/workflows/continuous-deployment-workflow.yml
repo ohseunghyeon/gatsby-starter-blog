@@ -15,11 +15,12 @@ jobs:
     - name: clone repository
       uses: actions/checkout@v1
     - run: |
-        ls -al
-        pwd
-        cd ..
-        pwd
-        ls -al
-        cd ohseunghyeon.github.io
-        pwd
-        ls -al
+        yarn
+        # ls -al
+        # pwd
+        # cd ..
+        # pwd
+        # ls -al
+        # cd ohseunghyeon.github.io
+        # pwd
+        # ls -al
