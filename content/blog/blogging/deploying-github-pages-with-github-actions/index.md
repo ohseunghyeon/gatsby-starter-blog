@@ -12,16 +12,17 @@ description: Github blog를 Github에서 제공하는 github actions로 배포�
 ```
 
 수동으로 블로그를 배포하기 위해서 블로그의 정적 파일들을 생성하고, 이를 **username.github.io** 저장소에 푸쉬해 왔다.  
-이 과정을 어떻게 자동화 할 수 있을까 생각하다가 두 개 정도의 선택지로 추렸다.
+이 과정을 어떻게 자동화 할 수 있을까 생각하다가 다음 몇 가지를 찾았다.
 
-1. [Netlify](https://www.netlify.com/) (또는 배포 자동화를 제공하는 서비스)
-2. Github Actions
+1. [Netlify](https://www.netlify.com/)
+2. [NOW](https://zeit.co/dashboard)
+3. Github Actions
 
 요즘 블로깅하시는 개발자 분들을 보면 Netlify라는 서비스를 많이 사용하고 있다. 단순한 호스팅 외에 많은 기능을 제공하는 서비스로 보인다.
 
 이 서비스를 사용하면 **username.github.io** 같은 저장소를 사용하여 필요가 없다. 블로그의 호스팅을 github pages가 아닌 netlify로 할 수 있기 때문이다. 그래서 블로그 생성기 저장소에 push하고 netlify 서비스만 연동하면 알아서 정적 파일들을 생성하여 호스팅까지 해줄 수 있다.
 
-그러나 Github Actions를 배우고 싶어, Github Actions로 배포하겠다.
+그러므로, 이 글을 보고 이해가 안 되거나, "나는 귀찮은 게 싫어" 라는 분이 계시면 netlify 또는 NOW를 사용하시면 되겠다.
 
 ### Github Actions
 
