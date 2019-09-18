@@ -13,13 +13,13 @@ description: 새로 만든 Gatsby 블로그를 내 마음대로 뜯어 고치기
 그래서 나는 고치고 싶은 부분들을 리스트로 정리해서 하나하나 하기로 했다.
 
 - [x] emoji 적용하기 :cat: - [gatsby-remark-emojis](https://www.gatsbyjs.org/packages/gatsby-remark-emojis/) 2019.9.3
-- [ ] [github actions로 자동 배포하기](/blogging/deploying-github-pages-with-github-actions/) 2019.9.4~
+- [x] [github actions로 자동 배포하기](/blogging/deploying-github-pages-with-github-actions/)
 - [ ] 홈의 글 리스트는 보여주고 싶은 글만 표시하자
 - [ ] 카테고리 넣기
 - [ ] Light/Dark Theme 넣기
 - [x] font 가독성 좋게 바꾸기
-- [ ] 새로운 게시글을 만드는 script 생성
-- [x] [about 페이지 만들기](http://localhost:8000/blogging/making-about-pages/)
+- [ ] 새로운 게시글을 만드는 script
+- [x] [about 페이지 만들기](/blogging/making-about-pages/)
 - [ ] 댓글 달기
 - [ ] 방문자수 ?
 - [ ] 몇 분짜리 글인지 표시

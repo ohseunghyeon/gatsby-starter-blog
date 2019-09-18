@@ -255,7 +255,8 @@ steps:
 
 # ssh private 키를 job 가상환경에 설치한다.
 # 정적 사이트 저장소 git을 clone하고 push하기 위해 필요하다
-- name: make deploy keys
+# 참고: https://cupfullofcode.com/blog/2018/12/21/deploying-hugo-with-github-actions/
+- name: install deploy keys
   env:
     GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}
   run: |
@@ -295,7 +296,7 @@ steps:
     git push origin master
 ```
 
-나는 git 인증을 위해서 ssh key를 설치하는 방법을 택했다. 그러나 이 key는 깃 계정 세팅에서 넣는 키가 아닌 한 프로젝트에만 적용되는 [deploy keys](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys)다. deploy keys를 설정하면 특정 프로젝트에 public key를 추가하며 접근 권한을 설정할 수 있다.
+나는 git 인증을 위해서 ssh key를 설치하는 방법을 택했다. 그러나 이 key는 깃 계정 세팅에서 넣는 키가  아닌 [deploy keys](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys)다. deploy keys를 설정하면 특정 프로젝트에 public key를 추가하여 접근 권한을 설정할 수 있다.
 
 ssh key를 생성하는 법을 모른다면 [여기](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key)를 참고하거나, 다음 명령어를 치면 된다.
 
@@ -307,7 +308,9 @@ Key가 준비되었다면 다음과 같이 저장소에 접근하기 위해 Depl
 
 ![deploy key](./deploy_key.PNG)
 
-그리고 ssh private key를 받아오는 과정이 필요한데, 중간에 보면 `${{ secrets.GH_ACTION_DEPLOY_KEY }}` 라는 context가 보인다. secrets는 저장소의 settings에서 설정 가능한데, private key를 secret에 추가하여 리눅스 가상환경에 가져가 파일로 생성하는 것이다.
+그리고 private key를 받아오는 과정이 필요한데, **install deploy keys**라는 이름을 가진 step에 `${{ secrets.GH_ACTION_DEPLOY_KEY }}` 라는 context가 보인다.
+
+secrets는 저장소의 settings에서 설정 가능한데, private key를 secret에 추가하여 리눅스 가상환경에 가져가 파일로 생성하는 것이다.
 
 ![secrets 설정](./secret.PNG)
 
@@ -369,6 +372,14 @@ workflow run을 유발하는 특정 동작. 예를 들어 누군가 저장소에
 빌드나 코드를 테스트할 때 생성되는 파일. 예를 들어, 바이너리나 패키지 파일, 테스트 결과, 스크린샷, 로그 파일 등이 이에 해당한다. workflow에서 생성된 artifact는 해당 workflow와 관련이 있고, 다른 job에 의해 사용되거나 배포될 수 있다.
 
 </details>
+
+## 후기
+
+workflow를 만들면서 job을 두 개로 나눠서 build, deploy로 할 수 있을까 생각했다. 그런데 그 둘은 독립된 가상 환경을 갖게 될 텐데 그럼 파일을 어디서 가져오지? 라는 생각이 들었다. 개념적으로 나누고 싶긴 한데, 그럴 방법이 있을지 계속 공부하며 찾아봐야겠다. 그리고 액션이나 docker를 사용하는 것에 대해서도 조금씩 알아가야겠다.
+
+정적 사이트 저장소를 clone하고 push하는 과정이 조금 힘들었다. 처음에는 해당 저장소를 actions/checkout을 사용해서 가져왔다. 저 액션을 사용하면 https 프로토콜로 저장소를 가져오게 되는데 그러면 아이디와 비밀번호로 인증하여 push를 할 수 있다. 어떻게 할 수 있을지 한참 찾다가 personal access token이라는 걸 알게 됐는데.. 잘 안 됐다.
+
+내 추측에 이 워크플로우가 동작할 때 어떤 토큰이 자동으로 생기는 것 같다. 그래서 그 토큰을 사용해보려고 했는데 안 됐다. 그렇다고 다른 토큰을 직접 생성해서 해봐도 잘 안 됐다. 명령어의 잘못이든, 내가 찾아내지 못했든.. 혹시 어딘가 다른 방법이 있다면 알고 싶다.
 
 ## 참고 자료
 

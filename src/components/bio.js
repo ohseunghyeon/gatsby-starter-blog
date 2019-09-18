@@ -53,9 +53,13 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p style={{ maxWidth: '180px' }}>
-        Code, be Lazy, be a cat.
-        {' '}
+      <p
+        style={{
+          display: `flex`,
+          flexDirection: `column`
+        }}
+      >
+        <span>Code, Lazy, Cat.</span>
         <a href={`https://github.com/${social.github}`} target="_blank" rel="noopener noreferrer">
           {author}
         </a>

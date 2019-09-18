@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Lazy Nyaong`,
     author: `Oh SeungHyeon`,
-    description: `Code, Cat, Lazy`,
+    description: `Code, Lazy, Cat`,
     siteUrl: `https://ohseunghyeon.github.io/`,
     social: {
       github: `ohseunghyeon`
