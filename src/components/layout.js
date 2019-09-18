@@ -67,9 +67,9 @@ const Layout = (props) => {
           paddingTop: '1.75rem'
         }}
       >
-        <a href={`https://github.com/ohseunghyeon`} target="_blank" rel="noopener noreferrer">
+        {/* <a href={`https://github.com/ohseunghyeon`} target="_blank" rel="noopener noreferrer">
           github
-        </a>
+        </a> */}
       </footer>
     </div>
   )
