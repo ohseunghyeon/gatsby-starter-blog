@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import { formatReadingTime } from "../utils/helpers"
 
 class BlogIndex extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class BlogIndex extends React.Component {
         <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
+          const readingTime = formatReadingTime(Math.ceil(node.fields.readingTime.minutes));
           return (
             <article key={node.fields.slug}>
               <header>
@@ -30,7 +32,7 @@ class BlogIndex extends React.Component {
                     {title}
                   </Link>
                 </h3>
-                <small>{node.frontmatter.date} • {node.fields.readingTime.text}</small>
+                <small>{node.frontmatter.date} • {readingTime}</small>
               </header>
               <section>
                 <p
@@ -63,7 +65,7 @@ export const pageQuery = graphql`
           fields {
             slug
             readingTime {
-              text
+              minutes
             }
           }
           frontmatter {
