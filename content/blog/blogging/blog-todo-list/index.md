@@ -18,7 +18,7 @@ description: 새로 만든 Gatsby 블로그를 내 마음대로 뜯어 고치기
 - [ ] 카테고리 넣기
 - [ ] Light/Dark Theme 넣기
 - [x] font 가독성 좋게 바꾸기
-- [ ] 새로운 게시글을 만드는 script
+- [x] [새로운 게시글을 만드는 script 생성](/blogging/making-new-post-script/) - [Jbee](https://jbee.io/) 님의 스크립트를 참고하여 생성 (감사합니다)
 - [x] [about 페이지 만들기](/blogging/making-about-pages/)
 - [ ] 댓글 달기
 - [ ] 방문자수 ?
