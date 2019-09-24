@@ -21,7 +21,7 @@ description: 새로 만든 Gatsby 블로그를 내 마음대로 뜯어 고치기
 - [x] [excluding draft blog on build](/blogging/add-draft-feature/)
 - [x] [about 페이지 만들기](/blogging/making-about-pages/)
 - [x] [새로운 게시글을 만드는 script 생성](/blogging/making-new-post-script/) - [Jbee](https://jbee.io/) 님의 스크립트를 참고하여 생성 (감사합니다)
-- [x] 몇 분짜리 글인지 표시 - [gatsby-remark-reading-time](https://www.gatsbyjs.org/packages/gatsby-remark-reading-time)
+- [x] [몇 분짜리 글인지 표시](/blogging/add-reading-time-of-post) - [gatsby-remark-reading-time](https://www.gatsbyjs.org/packages/gatsby-remark-reading-time)
 - [ ] 카테고리 넣기
 - [ ] 홈의 글 리스트는 보여주고 싶은 글만 표시하자
 - [ ] Light/Dark Theme 넣기
