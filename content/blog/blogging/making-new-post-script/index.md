@@ -64,4 +64,4 @@ essay
 
 (이에 대해 Jbee 님은 images 디렉토리에서 포스트 별로 이미지를 분리하는 방법을 택하셨다.)
 
-## 소스코드
+원본 소스는 [여기](https://github.com/ohseunghyeon/gatsby-blog/blob/master/cli/create-new-post.js)에서 확인할 수 있다.
