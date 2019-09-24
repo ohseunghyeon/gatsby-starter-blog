@@ -13,20 +13,20 @@ description: 새로 만든 Gatsby 블로그를 내 마음대로 뜯어 고치기
 그래서 나는 고치고 싶은 부분들을 리스트로 정리해서 하나하나 하기로 했다.
 
 - [x] emoji 적용하기 :cat: - [gatsby-remark-emojis](https://www.gatsbyjs.org/packages/gatsby-remark-emojis/) 2019.9.3
-- [x] [github actions로 자동 배포하기](/blogging/deploying-github-pages-with-github-actions/)
-- [ ] 홈의 글 리스트는 보여주고 싶은 글만 표시하자
-- [ ] 카테고리 넣기
-- [ ] Light/Dark Theme 넣기
 - [x] font 가독성 좋게 바꾸기
-- [x] [새로운 게시글을 만드는 script 생성](/blogging/making-new-post-script/) - [Jbee](https://jbee.io/) 님의 스크립트를 참고하여 생성 (감사합니다)
-- [x] [about 페이지 만들기](/blogging/making-about-pages/)
-- [ ] 댓글 달기
-- [ ] 방문자수 ?
-- [ ] 몇 분짜리 글인지 표시
-- [ ] 글 목록 lazy load
-- [ ] 글 내의 목차
 - [x] now 연동해서 풀 리퀘스트 자동 배포하기
 - [x] [code block theme 설정](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/) - gatsby-browser.js - import "prismjs/themes/prism-tomorrow.css"
-- [x] [excluding draft blog on build](/blogging/add-draft-feature/)
-- [ ] 글의 마지막 수정 시간 넣기
 - [x] [이미지 클릭 시 새 창이 아닌 블로그 내에서 띄우기](https://www.gatsbyjs.org/packages/gatsby-remark-images-medium-zoom/)
+- [x] [github actions로 자동 배포하기](/blogging/deploying-github-pages-with-github-actions/)
+- [x] [excluding draft blog on build](/blogging/add-draft-feature/)
+- [x] [about 페이지 만들기](/blogging/making-about-pages/)
+- [x] [새로운 게시글을 만드는 script 생성](/blogging/making-new-post-script/) - [Jbee](https://jbee.io/) 님의 스크립트를 참고하여 생성 (감사합니다)
+- [x] 몇 분짜리 글인지 표시 - [gatsby-remark-reading-time](https://www.gatsbyjs.org/packages/gatsby-remark-reading-time)
+- [ ] 카테고리 넣기
+- [ ] 홈의 글 리스트는 보여주고 싶은 글만 표시하자
+- [ ] Light/Dark Theme 넣기
+- [ ] 댓글 달기
+- [ ] 방문자수 ?
+- [ ] 글 목록 lazy load
+- [ ] 글 내의 목차
+- [ ] 글의 마지막 수정 시간 넣기
