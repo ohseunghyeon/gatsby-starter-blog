@@ -19,7 +19,6 @@ class BlogIndex extends React.Component {
         <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
-          const readingTime = formatReadingTime(Math.ceil(node.fields.readingTime.minutes));
           return (
             <article key={node.fields.slug}>
               <header>
@@ -32,7 +31,10 @@ class BlogIndex extends React.Component {
                     {title}
                   </Link>
                 </h3>
-                <small>{node.frontmatter.date} • {readingTime}</small>
+                <small>
+                  {node.frontmatter.date}
+                  {` • ${formatReadingTime(node.timeToRead)}`}
+                </small>
               </header>
               <section>
                 <p
@@ -64,10 +66,8 @@ export const pageQuery = graphql`
           excerpt
           fields {
             slug
-            readingTime {
-              minutes
-            }
           }
+          timeToRead
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
