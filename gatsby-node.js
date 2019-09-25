@@ -5,6 +5,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const categoryPage = path.resolve(`./src/templates/category-page.js`)
   const result = await graphql(
     `
       {
@@ -19,6 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                category
               }
             }
           }
@@ -31,23 +33,65 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors
   }
 
-  // Create blog posts pages.
+  // Create blog posts pages and category pages.
   const posts = result.data.allMarkdownRemark.edges
 
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    const next = index === 0 ? null : posts[index - 1].node
+  // Collect posts by their categories
+  // Next, previous를 카테고리 내에서 보여주게끔
+  const postsByCategory = new Map();
+  posts.forEach((post) => {
+    const category = post.node.frontmatter.category;
 
-    createPage({
-      path: post.node.fields.slug,
-      component: blogPost,
-      context: {
-        slug: post.node.fields.slug,
-        previous,
-        next,
-      },
-    })
+    if (category) {
+      if (!postsByCategory.has(category)) {
+        postsByCategory.set(category, []);
+      }
+      postsByCategory.get(category).push(post);
+    } else {
+      throw new Error('카테고리가 있어야 하는데, 왜 없을까요?');
+    }
   })
+
+  // Create blog posts pages.
+  postsByCategory.forEach(
+    posts => posts.forEach(
+      (post, index) => {
+        const previous = index === posts.length - 1 ? null : posts[index + 1].node
+        const next = index === 0 ? null : posts[index - 1].node
+
+        createPage({
+          path: post.node.fields.slug,
+          component: blogPost,
+          context: {
+            slug: post.node.fields.slug,
+            previous,
+            next,
+          },
+        })
+      }
+    )
+  )
+
+  // Create category pages.
+  postsByCategory.forEach(
+    (_, fullCategory) => {
+      const splitedCategory = fullCategory.split('/');
+
+      let category = ''
+      while (splitedCategory.length) {
+        if (category) category += '/'
+
+        category += splitedCategory.shift();
+
+        createPage({
+          path: `/${category}`,
+          component: categoryPage,
+          context: {
+            category: `^/${category}/`
+          }
+        })
+      }
+    })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

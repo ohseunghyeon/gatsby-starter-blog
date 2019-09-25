@@ -5,7 +5,6 @@ description:
 category: blogging
 ---
 
-
 카테고리 페이지
 gatsby-node 에서 카테고리 query를 추가하고, 이 카테고리들로 createPage를 돌려서 template을 index.js랑 비슷한 놈으로 하나 딴다.
 
