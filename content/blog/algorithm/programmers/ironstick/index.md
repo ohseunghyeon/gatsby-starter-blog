@@ -2,6 +2,7 @@
 title: 쇠막대기
 date: "2019-09-05T01:15:00.000Z"
 description: 프로그래머스 코딩테스트 연습 > 스택/큐
+category: algorithm/programmers
 ---
 
 ## 문제 설명
