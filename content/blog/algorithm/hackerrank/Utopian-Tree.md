@@ -2,9 +2,10 @@
 title: Utopian Tree
 date: "2019-09-05T02:00:00.000Z"
 description: hackkerrank practice
+category: algorithm/hackerrank
 ---
 
-```
+```none
 Author dheeraj
 Difficulty Easy
 ```

@@ -2,6 +2,7 @@
 title: Blog 꾸미기
 date: "2019-09-03T09:19:59.297Z"
 description: 새로 만든 Gatsby 블로그를 내 마음대로 뜯어 고치기 위한 여정
+category: blogging
 ---
 
 본격적인 일기를 쓰기 위해서 블로그를 새로 만들었다.
@@ -29,4 +30,3 @@ description: 새로 만든 Gatsby 블로그를 내 마음대로 뜯어 고치기
 - [ ] 방문자수 ?
 - [ ] 글 목록 lazy load
 - [ ] 글 내의 목차
-- [ ] 글의 마지막 수정 시간 넣기

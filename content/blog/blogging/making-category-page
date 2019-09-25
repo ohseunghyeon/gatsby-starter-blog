@@ -1,0 +1,13 @@
+---
+title: 카테고리 별 리스트 페이지 만들기
+date: 2019-09-25T08:27:25.700Z
+description: 
+category: blogging
+---
+
+
+카테고리 페이지
+gatsby-node 에서 카테고리 query를 추가하고, 이 카테고리들로 createPage를 돌려서 template을 index.js랑 비슷한 놈으로 하나 딴다.
+
+좌측 카테고리들
+components

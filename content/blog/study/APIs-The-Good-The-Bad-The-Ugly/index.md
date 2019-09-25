@@ -2,6 +2,7 @@
 title: "APIs: The Good, The Bad, The Ugly"
 date: "2019-09-04T09:20:08.249Z"
 description: "Techlahoma 200 OK 2019 행사에서 Michele Titolo의 발표"
+category: study
 ---
 
 `youtube:https://www.youtube.com/watch?v=t0nl5aUfAvY`

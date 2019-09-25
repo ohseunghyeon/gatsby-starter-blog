@@ -2,6 +2,7 @@
 title: Github pages를 github actions로 자동 배포하기
 date: "2019-09-17T10:22:37.310Z"
 description: Github blog를 Github에서 제공하는 github actions로 배포하기
+category: blogging
 ---
 
 나는 Github pages를 운영하기 위해서 다음과 같이 두 개의 저장소를 사용하고 있다.

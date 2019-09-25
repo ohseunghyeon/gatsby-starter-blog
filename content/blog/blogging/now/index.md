@@ -2,6 +2,7 @@
 title: github 저장소에 now 적용기
 date: "2019-09-05T07:34:55.583Z"
 description: overreacted.io 저장소를 보던 중 발견한 서비스를 내 저장소에 적용해보기
+category: blogging
 ---
 
 ## 발단

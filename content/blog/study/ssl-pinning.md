@@ -2,6 +2,7 @@
 title: "[번역] SSL Pinning"
 date: "2019-09-05T03:40:10.093Z"
 description: ssl pinning에 대해 Zhang Qichuan의 글을 번역한 글
+category: study
 ---
 
 원글: [Explain SSL Pinning with simple codes - Zhang QiChuan](https://medium.com/@zhangqichuan/explain-ssl-pinning-with-simple-codes-eaee95b70507)

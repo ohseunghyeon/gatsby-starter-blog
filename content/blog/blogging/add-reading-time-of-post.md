@@ -1,7 +1,7 @@
 ---
 title: Gatsby에 Reading time 추가하기
 date: 2019-09-24T13:36:30.699Z
-description: 글
+description: gastby-transformer-remark는 timeToRead를 생성한다
 category: blogging
 ---
 

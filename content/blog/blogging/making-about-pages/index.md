@@ -2,6 +2,7 @@
 title: About 페이지 만들기
 date: "2019-09-10T08:15:51.446Z"
 description: gatsby-starter-blog에서 about page 만들기
+category: blogging
 ---
 
 Docs에 따르면, Gatsby에서 페이지를 만드는 방법은 3가지가 있다.

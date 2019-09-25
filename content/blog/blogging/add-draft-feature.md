@@ -2,6 +2,7 @@
 title: Gatsby 블로그에 Draft 기능 추가하기
 date: "2019-09-19T11:39:03.804Z"
 description: 작성중인 게시글이 블로그에 포함되지 않게 배포하기
+category: blogging
 ---
 
 ## 발단
