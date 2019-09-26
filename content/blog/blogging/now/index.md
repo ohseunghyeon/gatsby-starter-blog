@@ -1,13 +1,13 @@
 ---
 title: github 저장소에 now 적용기
 date: "2019-09-05T07:34:55.583Z"
-description: overreacted.io 저장소를 보던 중 발견한 서비스를 내 저장소에 적용해보기
+description: now! 자동 배포 서비스
 category: blogging
 ---
 
 ## 발단
 
-난 블로그를 이쁘게 만들고 싶다. 그래서 남의 것들을 훔치려고 돌아다니고 있다.
+난 블로그를 이쁘게 만들고 싶다. 그래서 다른 Gatsby 블로그들을 참고하려고 서핑하고 있었다.
 그러다가 Dan Abramov의 블로그 [overreacted.io](https://overreacted.io/) [깃헙 저장소](https://github.com/gaearon/overreacted.io)를 보게 됐다.
 
 ![풀 리퀘스트에 있는 특정 브랜치의 자동 배포 링크](./0.PNG)
