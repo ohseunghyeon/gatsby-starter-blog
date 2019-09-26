@@ -1,7 +1,7 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
@@ -37,7 +37,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const posts = result.data.allMarkdownRemark.edges
 
   // Collect posts by their categories
-  // Next, previous를 카테고리 내에서 보여주게끔
+  // Next, previous를 카테고리 내에서 식별
   const postsByCategory = new Map();
   posts.forEach((post) => {
     const category = post.node.frontmatter.category;
@@ -48,7 +48,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
       postsByCategory.get(category).push(post);
     } else {
-      throw new Error('카테고리가 있어야 하는데, 왜 없을까요?');
+      reporter.warn(`다음 파일에 카테고리가 없습니다. ${post.node.frontmatter.title}`)
     }
   })
 
