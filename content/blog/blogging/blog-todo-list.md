@@ -26,7 +26,7 @@ category: blogging
 - [ ] 카테고리 넣기
 - [ ] 홈의 글 리스트는 보여주고 싶은 글만 표시하자
 - [ ] Light/Dark Theme 넣기
-- [ ] 댓글 달기
+- [ ] 댓글 달기 - https://utteranc.es/
 - [ ] 방문자수 ?
 - [ ] 글 목록 lazy load
 - [ ] 글 내의 목차

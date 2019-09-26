@@ -1,5 +1,5 @@
 ---
-title: About 페이지 만들기
+title: Gatsby Blog에 About 페이지 만들기
 date: "2019-09-10T08:15:51.446Z"
 description: gatsby-starter-blog에서 about page 만들기
 category: blogging

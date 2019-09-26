@@ -22,6 +22,7 @@ const BlogIndex = ({ data, location }) => {
             <header>
               <h3
                 style={{
+                  marginTop: rhythm(2),
                   marginBottom: rhythm(1 / 4),
                 }}
               >
@@ -32,15 +33,11 @@ const BlogIndex = ({ data, location }) => {
               <small>
                 {node.frontmatter.date}
                 {` • ${formatReadingTime(node.timeToRead)}`}
+                <Link style={{ opacity: `0.75` }} to={`/${node.frontmatter.category}`}>
+                  {` • ${node.frontmatter.category}`}
+                </Link>
               </small>
             </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
           </article>
         )
       })}
@@ -57,7 +54,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {frontmatter: {category: {regex: "/^(?!algorithm)/" }}}
+    ) {
       edges {
         node {
           excerpt
@@ -69,6 +69,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            category
           }
         }
       }

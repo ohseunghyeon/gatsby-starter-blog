@@ -38,8 +38,13 @@ class BlogPostTemplate extends React.Component {
             >
               {post.frontmatter.date}
               {` • ${formatReadingTime(post.timeToRead)}`}
+              <Link style={{ opacity: `0.75` }} to={`/${post.frontmatter.category}`}>
+                {` • ${post.frontmatter.category}`}
+              </Link>
             </p>
           </header>
+          {/* TODO: TOC */}
+          {/* <nav dangerouslySetInnerHTML={{ __html: post.tableOfContents }} /> */}
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{
@@ -96,11 +101,13 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      tableOfContents
       timeToRead
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        category
       }
     }
   }
