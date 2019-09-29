@@ -47,6 +47,8 @@ const BlogIndex = ({ data, location }) => {
 
 export default BlogIndex
 
+// filter: {frontmatter: {category: {regex: "/^(?!algorithm)/" }}}
+
 export const pageQuery = graphql`
   query {
     site {
@@ -56,7 +58,6 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: {frontmatter: {category: {regex: "/^(?!algorithm)/" }}}
     ) {
       edges {
         node {
