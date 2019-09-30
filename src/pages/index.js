@@ -1,10 +1,24 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import { formatReadingTime } from "../utils/helpers"
+
+const CategoryLink = styled(Link)`
+  opacity: 0.75;
+  ::before {
+    content: " • ";
+  }
+  @media screen and (max-width: 48em) {
+    ::before {
+      display: none;
+    }
+    display: block;
+  }
+`
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -31,9 +45,9 @@ const BlogIndex = ({ data, location }) => {
               <small>
                 {node.frontmatter.date}
                 {` • ${formatReadingTime(node.timeToRead)}`}
-                <Link style={{ opacity: `0.75` }} to={`/${node.frontmatter.category}`}>
-                  {` • ${node.frontmatter.category}`}
-                </Link>
+                <CategoryLink to={`/${node.frontmatter.category}`}>
+                  {node.frontmatter.category}
+                </CategoryLink>
               </small>
             </header>
           </article>

@@ -18,7 +18,6 @@ const CategoryPage = ({ data, location, pageContext }) => {
       <h2
         style={{
           textTransform: 'uppercase',
-          marginTop: rhythm(-1 / 2),
         }}
       >
         {category}

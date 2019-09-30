@@ -7,7 +7,7 @@ import { rhythm } from "../utils/typography"
 const Container = styled.div`
   display: flex;
   @media screen and (max-width: 48em) {
-    flex-direction: column;
+    display: block;
   }
 `
 
@@ -16,12 +16,7 @@ const Layout = (props) => {
   // const rootPath = `${__PATH_PREFIX__}/`
 
   return (
-    <Container
-      style={{
-        display: `flex`,
-
-      }}
-    >
+    <Container>
       <Header title={title} />
       <div
         style={{
