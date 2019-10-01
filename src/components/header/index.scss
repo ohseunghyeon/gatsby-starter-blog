@@ -1,11 +1,74 @@
+@import '../../styles/variables.scss';
+
 .header {
-  background-color: white;
-  padding: 5px;
-  z-index: 1;
-  @media screen and (max-width: 48em) {
+  flex-shrink: 0;
+  padding: 0 1.21875rem 2.4375rem;
+  border-right: 1px solid $border-color;
+  width: 228px;
+  min-height: 100vh;
+
+  @media screen and (max-width: 768px) {
     position: sticky;
-    border-bottom: 1px solid hsla(0,0,0,0.2);
     top: 0;
     display: flex;
+    padding: 15px;
+    width: 100%;
+    min-height: auto;
+    border-right: 0;
+    border-bottom: 1px solid $border-color;
+    background-color: white;
+    z-index: 1;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 5px;
+  }
+
+  .top-nav {
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: flex;
+      width: 100%;
+    }
+
+    .nav-links {
+      // position: absolute;
+    }
+  }
+
+  .header-logo {
+    box-shadow: none;
+    text-decoration: none;
+    color: inherit;
+    margin-left: 20px;
+    font-size: 1.5rem;
+    @media screen and (max-width: 480px) {
+      margin-left: 10px;
+    }
+  }
+
+  .left-sidrbar--sticky-container {
+    position: sticky;
+    top: 43px;
+    margin-top: 43px;
+
+    &-logo {
+      display: block;
+      margin-top: 2.625rem;
+      font-size: 2rem;
+    }
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.nav-links {
+  padding: 0;
+  margin: 0 0 12px;
+  list-style: none;
+  text-transform: capitalize;
+  a {
+    color: inherit;
   }
 }

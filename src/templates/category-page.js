@@ -1,8 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import SEO from "../components/seo"
+import ListTitle from "../components/ListTitle"
 import { rhythm } from "../utils/typography"
 import { formatReadingTime } from "../utils/helpers"
 
@@ -14,25 +15,13 @@ const CategoryPage = ({ data, location, pageContext }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title={category} />
-
-      <h2
-        style={{
-          textTransform: 'uppercase',
-        }}
-      >
-        {category}
-      </h2>
-
+      <ListTitle title={category} />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
           <article key={node.fields.slug}>
             <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
+              <h3 style={{ marginBottom: rhythm(1 / 4) }}>
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>

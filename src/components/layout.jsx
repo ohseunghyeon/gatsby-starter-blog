@@ -1,14 +1,24 @@
 import React from "react"
 import styled from "styled-components"
 
-import Header from './header'
+import Header from './Header'
 import { rhythm } from "../utils/typography"
 
 const Container = styled.div`
   display: flex;
-  @media screen and (max-width: 48em) {
+  @media screen and (max-width: 768px) {
     display: block;
   }
+`
+
+const Content = styled.div`
+  margin: 0 auto;
+  width: 100%;
+  max-width: ${rhythm(28)};
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    max-width: calc(100% - 228px);
+  }
+  padding: 0 ${rhythm(3 / 4)} ${rhythm(1.5)};
 `
 
 const Layout = (props) => {
@@ -18,13 +28,7 @@ const Layout = (props) => {
   return (
     <Container>
       <Header title={title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: rhythm(24),
-          padding: `0 ${rhythm(3 / 4)} ${rhythm(1.5)}`,
-        }}
-      >
+      <Content>
         <main>{children}</main>
         <footer
           style={{
@@ -36,7 +40,7 @@ const Layout = (props) => {
           github
         </a> */}
         </footer>
-      </div>
+      </Content>
     </Container>
   )
 }

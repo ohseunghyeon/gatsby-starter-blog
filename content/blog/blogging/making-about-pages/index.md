@@ -19,7 +19,7 @@ Docs에 따르면, Gatsby에서 페이지를 만드는 방법은 3가지가 있�
 ```javascript
 import React from 'react';
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import SEO from "../components/seo"
 
 const AboutPage = ({ location, data }) => (

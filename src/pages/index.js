@@ -2,8 +2,9 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import SEO from "../components/seo"
+import ListTitle from "../components/ListTitle"
 import { rhythm } from "../utils/typography"
 import { formatReadingTime } from "../utils/helpers"
 
@@ -27,17 +28,13 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
+      <ListTitle title="All Posts" />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
           <article key={node.fields.slug}>
             <header>
-              <h3
-                style={{
-                  marginTop: rhythm(2),
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
+              <h3 style={{ marginBottom: rhythm(1 / 4) }}>
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>

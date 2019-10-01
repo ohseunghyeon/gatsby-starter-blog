@@ -5,14 +5,14 @@ body:lang(ko) article {
 
 .gatsby-highlight {
   margin-bottom: 1.75rem;
-  margin-left: -1.3125rem;
-  margin-right: -1.3125rem;
+  margin-left: -1.0125rem;
+  margin-right: -1.0125rem;
   border-radius: 10px;
   -webkit-overflow-scrolling: touch;
   overflow: auto;
 }
 
-@media (max-width: 672px) {
+@media screen and (max-width: 672px) {
   .gatsby-highlight {
     border-radius: 0;
   }

@@ -1,4 +1,4 @@
-import './global.css';
+import "../styles/global.scss";
 
 import Typography from "typography"
 import GitHub from "typography-theme-github"
@@ -18,8 +18,7 @@ GitHub.overrideThemeStyles = () => {
   }
 }
 
-GitHub.bodyFontFamily = ['NanumGothic'];
-GitHub.aFontFamily = ['NanumGothic'];
+GitHub.bodyFontFamily = ['Apple SD Gothic Neo', 'NanumGothic', 'sans-serif'];
 
 const typography = new Typography(GitHub)
 
