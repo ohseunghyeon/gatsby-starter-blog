@@ -21,32 +21,13 @@ const Header = (props) => {
 
   return (
     <header className="header">
-      <nav className="top-nav">
-        <Hamburger />
-        <Link className="header-logo" to={`/`}>{title}</Link>
-        {/* <ol className="nav-links">
-          {categories.map(c => (
-            <li key={c}>
-              <Link to={`/${c}`}>
-                {c}
-              </Link>
-            </li>
-          ))}
-        </ol> */}
-      </nav>
-      <nav className="left-sidrbar--sticky-container" role="navigation">
+      <Hamburger />
+      <Link className="header-logo" to={`/`}>{title}</Link>
+      <nav className="nav" role="navigation">
         <ol className="nav-links">
-          <li style={{
-            marginBottom: `12px`,
-            fontSize: `2rem`
-          }}>
-            <Link className="header-logo" to={`/`}>{title}</Link>
-          </li>
           {categories.map(c => (
             <li key={c}>
-              <Link to={`/${c}`}>
-                {c}
-              </Link>
+              <Link to={`/${c}`}>{c}</Link>
             </li>
           ))}
         </ol>

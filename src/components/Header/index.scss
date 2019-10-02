@@ -6,12 +6,15 @@
   border-right: 1px solid $border-color;
   width: 228px;
   min-height: 100vh;
+  padding: 5px;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
   @media screen and (max-width: 768px) {
     position: sticky;
     top: 0;
-    display: flex;
-    padding: 15px;
     width: 100%;
     min-height: auto;
     border-right: 0;
@@ -20,52 +23,44 @@
     z-index: 1;
   }
 
-  @media screen and (max-width: 480px) {
-    padding: 5px;
-  }
-
-  .top-nav {
+  // hamburger
+  .nav-toggle {
     display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
     @media screen and (max-width: 768px) {
-      display: flex;
-      width: 100%;
+      display: block;
     }
 
-    .nav-links {
-      // position: absolute;
+    &.active ~ .nav {
+      display: block;
     }
   }
 
   .header-logo {
-    box-shadow: none;
-    text-decoration: none;
-    color: inherit;
-    margin-left: 20px;
+    position: sticky;
+    top: 43px;
     font-size: 1.5rem;
-    @media screen and (max-width: 480px) {
-      margin-left: 10px;
+    @media screen and (max-width: 768px) {
+      position: static;
     }
   }
 
-  .left-sidrbar--sticky-container {
+  .nav {
     position: sticky;
-    top: 43px;
-    margin-top: 43px;
-
-    &-logo {
-      display: block;
-      margin-top: 2.625rem;
-      font-size: 2rem;
-    }
+    top: 93px;
     @media screen and (max-width: 768px) {
       display: none;
+      position: static;
+      margin-top: 15px;
     }
   }
 }
 
 .nav-links {
   padding: 0;
-  margin: 0 0 12px;
+  margin: 0 0;
   list-style: none;
   text-transform: capitalize;
   a {

@@ -2,12 +2,8 @@ $color: rgba(0,0,0,0.8);
 $duration: .3s;
 button {
   position: relative;
-	width: 25px;
-  height: 25px;
-  @media screen and (min-width: 480px) {
-    width: 39px;
-    height: 39px;
-  }
+	width: 30px;
+  height: 30px;
 	border: none;
 	background: linear-gradient(to bottom, $color, $color) no-repeat center;
 	background-size: 100% 20%;
