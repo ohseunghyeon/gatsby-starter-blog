@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from "gatsby"
 
 import Layout from "../components/Layout"
-import SEO from "../components/seo"
+import SEO from "../components/Seo"
 
 const AboutPage = ({ location, data }) => (
   <Layout location={location} title={data.site.siteMetadata.title}>
