@@ -5,12 +5,12 @@ import "./index.scss"
 import Hamburger from "../HeaderHamburger"
 import Nav from "../HeaderNav"
 
-const Header = ({ title }) => {
+const Header = ({ title, location }) => {
   return (
     <header className="header">
       <Hamburger />
       <Link className="header-logo" to={`/`}>{title}</Link>
-      <Nav />
+      <Nav location={location} />
     </header>
   )
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ListTitle = ({ title }) => {
+const PostListTitle = ({ title }) => {
   return (
     <h2 style={{
       textTransform: `uppercase`,
@@ -11,4 +11,4 @@ const ListTitle = ({ title }) => {
   )
 }
 
-export default ListTitle
+export default PostListTitle

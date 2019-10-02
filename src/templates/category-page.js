@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
-import ListTitle from "../components/ListTitle"
+import PostListTitle from "../components/PostListTitle"
 import { rhythm } from "../utils/typography"
 import { formatReadingTime } from "../utils/helpers"
 
@@ -15,7 +15,7 @@ const CategoryPage = ({ data, location, pageContext }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title={category} />
-      <ListTitle title={category} />
+      <PostListTitle title={category} />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (

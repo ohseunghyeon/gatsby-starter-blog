@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
-import ListTitle from "../components/ListTitle"
+import PostListTitle from "../components/PostListTitle"
 import { rhythm } from "../utils/typography"
 import { formatReadingTime } from "../utils/helpers"
 
@@ -28,7 +28,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <ListTitle title="All Posts" />
+      <PostListTitle title="All Posts" />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (

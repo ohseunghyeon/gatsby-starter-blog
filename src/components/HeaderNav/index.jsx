@@ -11,7 +11,7 @@ const Category = styled.li`
   }
 `
 
-const Nav = () => {
+const Nav = ({ location }) => {
   const data = useStaticQuery(graphql`
     query CategoryQuery {
       categories: allMarkdownRemark(limit: 2000) {
@@ -23,10 +23,11 @@ const Nav = () => {
     }
   `)
 
+  // make category array
   const categories = [];
-
   data.categories.group
     .reduce((catMap, g) => {
+      console.log(catMap)
       g.fieldValue
         .split('/')
         .reduce((fullCat, categoryChunk, i, a) => {

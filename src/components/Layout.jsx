@@ -24,13 +24,12 @@ const Content = styled.div`
   padding: 0 ${rhythm(3 / 4)} ${rhythm(1.5)};
 `
 
-const Layout = (props) => {
-  const { title, children } = props
+const Layout = ({ title, children, location }) => {
   // const rootPath = `${__PATH_PREFIX__}/`
 
   return (
     <Container>
-      <Header title={title} />
+      <Header title={title} location={location} />
       <Content>
         <main>{children}</main>
         <footer>
