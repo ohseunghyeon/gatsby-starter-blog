@@ -49,7 +49,7 @@ const Nav = ({ location }) => {
     <nav className="nav" role="navigation">
       <ol className="nav-links">
         {categories.map(({ slug, cat, count, depth }) => (
-          <div
+          <li
             className={`nav-link ${depth ? 'sub' : ''} ${currentCategory === slug ? 'current' : ''}`}
             key={cat}
           >
@@ -57,7 +57,7 @@ const Nav = ({ location }) => {
               {cat}
               <small>({count})</small>
             </Link>
-          </div>
+          </li>
         ))}
       </ol>
     </nav >
