@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
@@ -12,6 +12,7 @@ const Category = styled.li`
 `
 
 const Nav = ({ location }) => {
+  const [categories, setCategories] = useState([]);
   const data = useStaticQuery(graphql`
     query CategoryQuery {
       categories: allMarkdownRemark(limit: 2000) {
@@ -23,27 +24,32 @@ const Nav = ({ location }) => {
     }
   `)
 
-  // make category array
-  const categories = [];
-  data.categories.group
-    .reduce((catMap, g) => {
-      g.fieldValue
-        .split('/')
-        .reduce((fullCat, categoryChunk, i, a) => {
-          fullCat += `${i === 0 ? '' : '/'}${categoryChunk}`
+  useEffect(() => {
+    // make category array
+    const tempCategories = [];
+    data.categories.group
+      .reduce((catMap, g) => {
+        g.fieldValue
+          .split('/')
+          .reduce((fullCat, categoryChunk, i, a) => {
+            fullCat += `${i === 0 ? '' : '/'}${categoryChunk}`
 
-          catMap.set(fullCat, (catMap.get(fullCat) || 0) + g.totalCount)
+            catMap.set(fullCat, (catMap.get(fullCat) || 0) + g.totalCount)
 
-          return fullCat
-        }, '')
-      return catMap;
-    }, new Map())
-    .forEach((count, cat) => categories.push({
-      slug: cat,
-      cat: cat.split('/').pop(),
-      count,
-      depth: cat.split('/').length - 1
-    }))
+            return fullCat
+          }, '')
+        return catMap;
+      }, new Map())
+      .forEach((count, cat) => tempCategories.push({
+        slug: cat,
+        cat: cat.split('/').pop(),
+        count,
+        depth: cat.split('/').length - 1
+      }))
+    setCategories(tempCategories);
+  }, [data])
+
+  console.log(categories, location.pathname);
 
   return (
     <nav className="nav" role="navigation">
