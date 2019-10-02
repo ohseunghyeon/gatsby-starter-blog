@@ -2,13 +2,10 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
+import "./index.scss"
+
 const Category = styled.li`
-  &.sub {
-    ::before {
-      content: "-";
-      margin: 0 5px;
-    }
-  }
+
 `
 
 const Nav = ({ location }) => {
@@ -22,7 +19,6 @@ const Nav = ({ location }) => {
       }
     }
   `)
-
   // make category array
   const categories = [];
   data.categories.group
@@ -31,9 +27,7 @@ const Nav = ({ location }) => {
         .split('/')
         .reduce((fullCat, categoryChunk, i, a) => {
           fullCat += `${i === 0 ? '' : '/'}${categoryChunk}`
-
           catMap.set(fullCat, (catMap.get(fullCat) || 0) + g.totalCount)
-
           return fullCat
         }, '')
       return catMap;
@@ -45,21 +39,25 @@ const Nav = ({ location }) => {
       depth: cat.split('/').length - 1
     }))
 
-  console.log(categories, location.pathname);
+  const slug = location.pathname.slice(1);
+  const currentCategory = categories.reduce((current, next) => {
+    if (~slug.indexOf(next.slug)) return next.slug;
+    return current;
+  }, '')
 
   return (
     <nav className="nav" role="navigation">
       <ol className="nav-links">
         {categories.map(({ slug, cat, count, depth }) => (
-          <Category
-            className={`${depth ? 'sub' : ''}`}
+          <div
+            className={`nav-link ${depth ? 'sub' : ''} ${currentCategory === slug ? 'current' : ''}`}
             key={cat}
           >
             <Link to={`/${slug}`}>
               {cat}
               <small>({count})</small>
             </Link>
-          </Category>
+          </div>
         ))}
       </ol>
     </nav >
