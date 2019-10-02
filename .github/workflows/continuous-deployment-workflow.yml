@@ -14,10 +14,13 @@ jobs:
 
     - name: check things
       run: |
-        pwd
+        cd static-site-generator
         ls
-        cd ..
-        pwd
+        cd src
+        ls
+        cd components
+        ls
+        cd Header
         ls
 
     - name: git config
@@ -41,14 +44,6 @@ jobs:
       run: |
         cd ..
         git clone git@github.com:ohseunghyeon/ohseunghyeon.github.io.git static_site_repo
-
-    - name: check things
-      run: |
-        pwd
-        ls
-        cd ..
-        pwd
-        ls
 
     - name: install dependencies & build
       run: |
