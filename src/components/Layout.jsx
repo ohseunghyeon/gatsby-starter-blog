@@ -15,6 +15,9 @@ const Content = styled.div`
   margin: 0 auto;
   width: 100%;
   max-width: ${rhythm(28)};
+  @media screen and (max-width: 768px) {
+    padding-top: 50px;
+  }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     max-width: calc(100% - 228px);
   }
@@ -30,12 +33,7 @@ const Layout = (props) => {
       <Header title={title} />
       <Content>
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: '4.375rem',
-            paddingTop: '1.75rem'
-          }}
-        >
+        <footer>
           {/* <a href={`https://github.com/ohseunghyeon`} target="_blank" rel="noopener noreferrer">
           github
         </a> */}

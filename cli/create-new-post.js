@@ -5,14 +5,14 @@ const inquirer = require('inquirer')
 
 const CONTENTS_DIR = '/content/blog'
 const TARGET_DIR = path.join(process.cwd(), CONTENTS_DIR)
-const SUB_CATEGORIY_LIST = ['algorithm'];
+const SUB_CATEGORIY_LIST = ['algorithm'] // this category has sub category
 
 const findCategories = () => {
   return fs.readdirSync(TARGET_DIR)
     .reduce((array, c) => {
       if (~SUB_CATEGORIY_LIST.indexOf(c)) {
         fs.readdirSync(path.join(TARGET_DIR, c))
-          .forEach(subCat => array.push(`${c}/${subCat}`));
+          .forEach(subCat => array.push(`${c}/${subCat}`))
       } else {
         array.push(c);
       }
