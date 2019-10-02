@@ -1,12 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
 
 import "./index.scss"
-
-const Category = styled.li`
-
-`
 
 const Nav = ({ location }) => {
   const data = useStaticQuery(graphql`
