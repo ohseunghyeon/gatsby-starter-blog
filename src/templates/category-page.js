@@ -6,7 +6,6 @@ import SEO from "../components/Seo"
 import PostListTitle from "../components/PostListTitle"
 import PostFrontmatter from "../components/PostFrontmatter"
 import { rhythm } from "../utils/typography"
-import { formatReadingTime } from "../utils/helpers"
 
 const CategoryPage = ({ data, location, pageContext }) => {
   const siteTitle = data.site.siteMetadata.title
