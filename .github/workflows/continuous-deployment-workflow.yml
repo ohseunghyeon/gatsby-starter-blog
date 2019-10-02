@@ -12,6 +12,14 @@ jobs:
       with:
         path: 'static-site-generator'
 
+    - name: check things
+      run: |
+        pwd
+        ls
+        cd ..
+        pwd
+        ls
+
     - name: git config
       env:
         USER_NAME: ${{ github.event.pusher.name }}
