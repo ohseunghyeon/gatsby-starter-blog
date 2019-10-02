@@ -26,7 +26,6 @@ const Content = styled.div`
 
 const Layout = ({ title, children, location }) => {
   // const rootPath = `${__PATH_PREFIX__}/`
-
   return (
     <Container>
       <Header title={title} location={location} />
