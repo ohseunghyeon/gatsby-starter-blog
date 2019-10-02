@@ -1,25 +1,12 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import styled from "styled-components"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import PostListTitle from "../components/PostListTitle"
+import PostFrontmatter from "../components/PostFrontmatter"
 import { rhythm } from "../utils/typography"
-import { formatReadingTime } from "../utils/helpers"
 
-const CategoryLink = styled(Link)`
-  opacity: 0.75;
-  ::before {
-    content: " • ";
-  }
-  @media screen and (max-width: 48em) {
-    ::before {
-      display: none;
-    }
-    display: block;
-  }
-`
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -39,13 +26,11 @@ const BlogIndex = ({ data, location }) => {
                   {title}
                 </Link>
               </h3>
-              <small>
-                {node.frontmatter.date}
-                {` • ${formatReadingTime(node.timeToRead)}`}
-                <CategoryLink to={`/${node.frontmatter.category}`}>
-                  {node.frontmatter.category}
-                </CategoryLink>
-              </small>
+              <PostFrontmatter
+                date={node.frontmatter.date}
+                timeToRead={node.timeToRead}
+                category={node.frontmatter.category}
+              />
             </header>
           </article>
         )

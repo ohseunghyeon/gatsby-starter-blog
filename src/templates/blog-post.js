@@ -4,8 +4,8 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/Bio"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
-import { rhythm, scale } from "../utils/typography"
-import { formatReadingTime } from '../utils/helpers';
+import PostFrontmatter from "../components/PostFrontmatter"
+import { rhythm } from "../utils/typography"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -29,19 +29,12 @@ class BlogPostTemplate extends React.Component {
             >
               {post.frontmatter.title}
             </h1>
-            <p
-              style={{
-                ...scale(-1 / 5),
-                display: `block`,
-                marginBottom: rhythm(1),
-              }}
-            >
-              {post.frontmatter.date}
-              {` • ${formatReadingTime(post.timeToRead)}`}
-              <Link style={{ opacity: `0.75` }} to={`/${post.frontmatter.category}`}>
-                {` • ${post.frontmatter.category}`}
-              </Link>
-            </p>
+            <PostFrontmatter
+              date={post.frontmatter.date}
+              timeToRead={post.timeToRead}
+              category={post.frontmatter.category}
+              isInPost={true}
+            />
           </header>
           {/* TODO: TOC */}
           {/* <nav dangerouslySetInnerHTML={{ __html: post.tableOfContents }} /> */}
