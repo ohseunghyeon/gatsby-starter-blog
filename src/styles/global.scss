@@ -8,19 +8,12 @@ body:lang(ko) article {
   margin-left: -1.0125rem;
   margin-right: -1.0125rem;
   border-radius: 10px;
-  -webkit-overflow-scrolling: touch;
-  overflow: auto;
 }
 
-@media screen and (max-width: 672px) {
-  .gatsby-highlight {
-    border-radius: 0;
+@media screen and (max-width: 768px) {
+  .gatsby-highlight pre {
+    border-radius: 0 !important;
   }
-}
-
-.gatsby-highlight pre[class*='language-'] {
-  float: left;
-  min-width: 100%;
 }
 
 .gatsby-highlight-code-line {
