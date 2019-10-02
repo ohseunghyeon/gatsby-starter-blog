@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import Header from './Header1'
+import Header from './Header'
 import { rhythm } from "../utils/typography"
 
 const Container = styled.div`
