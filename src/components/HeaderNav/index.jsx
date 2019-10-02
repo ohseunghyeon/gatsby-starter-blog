@@ -27,7 +27,6 @@ const Nav = ({ location }) => {
   const categories = [];
   data.categories.group
     .reduce((catMap, g) => {
-      console.log(catMap)
       g.fieldValue
         .split('/')
         .reduce((fullCat, categoryChunk, i, a) => {
@@ -45,8 +44,6 @@ const Nav = ({ location }) => {
       count,
       depth: cat.split('/').length - 1
     }))
-
-  console.log(categories);
 
   return (
     <nav className="nav" role="navigation">
