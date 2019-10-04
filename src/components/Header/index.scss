@@ -21,19 +21,8 @@
     z-index: 1;
   }
 
-  // hamburger
-  .nav-toggle {
-    display: none;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    @media screen and (max-width: 768px) {
-      display: block;
-    }
-
-    &.active ~ .nav {
-      display: block;
-    }
+  .nav-toggle.active ~ .nav {
+    display: block;
   }
 
   .header-logo {

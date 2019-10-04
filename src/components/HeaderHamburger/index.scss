@@ -1,9 +1,16 @@
 $color: rgba(0,0,0,0.8);
 $duration: .3s;
-button {
-  position: relative;
-	width: 30px;
-  height: 30px;
+.nav-toggle {
+	display: none;
+	@media screen and (max-width: 768px) {
+		display: block;
+	}
+
+	position: fixed;
+	top: 13px;
+	left: 13px;
+	width: 24px;
+	height: 24px;
 	border: none;
 	background: linear-gradient(to bottom, $color, $color) no-repeat center;
 	background-size: 100% 20%;
