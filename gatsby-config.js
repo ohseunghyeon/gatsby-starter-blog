@@ -30,8 +30,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 768,
               linkImagesToOriginal: false,
+              wrapperStyle: `margin-bottom: 10px;`
             },
           },
           `gatsby-remark-images-medium-zoom`,

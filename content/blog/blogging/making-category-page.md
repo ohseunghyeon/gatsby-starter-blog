@@ -7,7 +7,7 @@ category: blogging
 
 ## 발단
 
-카테고리가 필요하다. 인덱스 페이지에는 글 목록만 있다. 심지어 글 목록이 너무 길어서 어디에 무슨 글이 있는지도 알 수가 없다. 문헌정보학을 전공한 나로써는 정리되지 않은 꼴은 볼 수가 없는 게 당연하다.
+카테고리가 필요하다. 인덱스 페이지에는 글 목록만 있다. 심지어 글 목록은 너무 길어서 어디에 무슨 글이 있는지도 알 수가 없다. 정리되지 않은 자료는 솔직히 있으나 마나다. 두고 볼 수가 없다.
 
 ## 카레고리 리스트 만들기
 
@@ -79,4 +79,6 @@ const CategoryPage = ({ data, location, pageContext }) => {
 
 ## 참고
 
-메뉴에 쓴 햄버거 버튼 - https://codepen.io/okawa-h/pen/xxKzLwm
+### 메뉴에 쓴 햄버거 버튼 - https://codepen.io/okawa-h/pen/xxKzLwm
+
+### width 768px 이하에서 상단 Header가 스크롤링에 따라 숨고 나타나게 하는 기능을 가진 JS library -  headroom.js
