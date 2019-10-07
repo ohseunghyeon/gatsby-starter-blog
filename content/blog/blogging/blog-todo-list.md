@@ -23,8 +23,7 @@ category: blogging
 - [x] [about 페이지 만들기](/blogging/making-about-pages/)
 - [x] [새로운 게시글을 만드는 script 생성](/blogging/making-new-post-script/) - [Jbee](https://jbee.io/) 님의 스크립트를 참고하여 생성 (감사합니다)
 - [x] [몇 분짜리 글인지 표시](/blogging/add-reading-time-of-post) - [gatsby-remark-reading-time](https://www.gatsbyjs.org/packages/gatsby-remark-reading-time)
-- [ ] 카테고리 넣기
-- [ ] 홈의 글 리스트는 보여주고 싶은 글만 표시하자
+- [x] [카테고리 넣기](/blogging/making-category-page/)
 - [ ] Light/Dark Theme 넣기
 - [ ] 댓글 달기 - https://utteranc.es/
 - [ ] 방문자수 ?
