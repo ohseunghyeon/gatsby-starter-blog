@@ -5,6 +5,7 @@ import Bio from "../components/Bio"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import PostFrontmatter from "../components/PostFrontmatter"
+import { Utterances } from '../components/PostComment'
 import { rhythm } from "../utils/typography"
 
 class BlogPostTemplate extends React.Component {
@@ -75,6 +76,7 @@ class BlogPostTemplate extends React.Component {
             </li>
           </ul>
         </nav>
+        <Utterances />
       </Layout>
     )
   }
