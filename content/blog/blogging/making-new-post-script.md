@@ -1,5 +1,5 @@
 ---
-title: Gatsby에서 새로운 글 만드는 스크립트 만들기
+title: gatsby-starter-blog 새로운 글 생성 스크립트 만들기
 date: 2019-09-24T09:39:24.575Z
 description: inquirer로 스크립트 만들기
 category: blogging
