@@ -14,7 +14,7 @@ const Container = styled.div`
 const Content = styled.div`
   margin: 0 auto;
   width: 100%;
-  max-width: 768px;
+  max-width: 39rem;
   @media screen and (max-width: 768px) {
     padding-top: 50px;
   }
