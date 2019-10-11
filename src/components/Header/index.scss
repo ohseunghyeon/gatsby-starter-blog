@@ -2,7 +2,7 @@
 
 .header {
   flex-shrink: 0;
-  border-right: 1px solid $border-color;
+  border-right: 1px solid var(--border-color);
   width: 228px;
   min-height: 100vh;
   display: flex;
@@ -16,8 +16,8 @@
     padding: 5px;
     min-height: auto;
     border-right: 0;
-    border-bottom: 1px solid $border-color;
-    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg);
     z-index: 1;
   }
 

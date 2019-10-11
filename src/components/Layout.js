@@ -1,11 +1,15 @@
 import React from "react"
 import styled from "styled-components"
-
 import Header from './Header'
+
 import { rhythm } from "../utils/typography"
 
 const Container = styled.div`
   display: flex;
+  color: var(--textNormal);
+  background: var(--bg);
+  transition: color 0.2s ease-out, background 0.2s ease-out;
+ 
   @media screen and (max-width: 768px) {
     display: block;
   }

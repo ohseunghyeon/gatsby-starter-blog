@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
-import "./index.scss"
+import "./HeaderNav.scss"
 
 const Nav = ({ location }) => {
   const data = useStaticQuery(graphql`

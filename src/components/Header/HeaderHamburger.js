@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from "react"
 
-import "./index.scss"
+import "./HeaderHamburger.scss"
 
 const NavToggle = () => {
   const refButton = useRef(null)

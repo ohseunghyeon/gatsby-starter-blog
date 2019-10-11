@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { rhythm, scale } from "../../utils/typography"
+import { rhythm, scale } from "../utils/typography"
 
-import { formatReadingTime } from "../../utils/helpers"
+import { formatReadingTime } from "../utils/helpers"
 
 const CategoryLink = styled(Link)`
   opacity: 0.75;
