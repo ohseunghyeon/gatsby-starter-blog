@@ -46,11 +46,17 @@ darkQuery.addListener(function(e) {
 });
 ```
 
-그러나 이 방법으로만 구현하게 되면 light 모드를 사용하는 사용자는 dark mode를 사용할 수 없다. 그러므로 switch를 두고 toggle을 하여 mode를 바꾸는 방법을 사용하였다.
+그러나 이 방법으로만 구현하게 되면 OS에서 dark  모드를 사용하지 않는 사용자는 웹에서 dark mode를 사용할 수 없다.
 
 ## CSS Variables
 
-CSS 변수는 다음과 같이 사용할 수 있다.
+switch를 두고 toggle을 하여 mode를 바꾸는 방법은 어떨까?
+
+switch에 따라 .light 또는 .dark 클래스를 적용하여 사이트의 전체적인 css를 변경하는 것이다.
+
+그러기 위해서는 변수와 같은 것이 필요하다.
+
+CSS에도 변수가 있으며 다음과 같이 사용할 수 있다.
 
 ```css
 // 변수의 선언
@@ -64,7 +70,7 @@ element {
 }
 ```
 
-그리고 switch는 css class의 변경을 활용하여 다음과 같이 적용할 수 있다.
+이 변수를 활용하면, 다음과 같이 모드에 따라 변수의 값을 바꾸어 사이트 전체의 css에 적용되게 할 수 있다.
 
 ```css
 body.light {
@@ -79,8 +85,6 @@ body {
   background: var(--main-bg-color);
 }
 ```
-
-이런 접근법으로 switch를 만들고 body의 class를 변경해주면 색상이 변경된다.
 
 ## 추가적인 고려 사항
 
