@@ -1,4 +1,4 @@
-import "../styles/global.scss";
+// import "../styles/global.scss";
 
 import Typography from "typography"
 import GitHub from "typography-theme-github"

@@ -40,6 +40,7 @@ export default function HTML(props) {
 
                 var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
                 darkQuery.addListener(function(e) {
+                  alert(e.matches)
                   window.__setPreferredTheme(e.matches ? 'dark' : 'light')
                 });
 

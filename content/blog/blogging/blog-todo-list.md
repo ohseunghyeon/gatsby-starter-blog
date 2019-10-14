@@ -25,6 +25,6 @@ category: blogging
 - [x] [몇 분짜리 글인지 표시](/blogging/add-reading-time-of-post) - [gatsby-remark-reading-time](https://www.gatsbyjs.org/packages/gatsby-remark-reading-time)
 - [x] [카테고리 넣기](/blogging/making-category-page/)
 - [x] 댓글 달기 - https://utteranc.es/
-- [ ] Light/Dark Theme 넣기
+- [x] [Light/Dark Theme 넣기](/blogging/applying-dark-mode-on-gatsby-blog/)
 - [ ] 글 목록 lazy load
 - [ ] 글 내의 목차

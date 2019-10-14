@@ -26,7 +26,7 @@ if it respects REST Conventions
   /movies/127/times
 ```
 
-- The Bad: Inconsistency 
+- The Bad: Inconsistency
 
 ```
   /users/22445
@@ -34,7 +34,7 @@ if it respects REST Conventions
   /times/127
 ```
 
-- The Ugly: 
+- The Ugly:
 
 ```
   GET /remove  <==used GET method to delete something
