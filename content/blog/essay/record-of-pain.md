@@ -1,5 +1,5 @@
 ---
-title: 환자로 실려간 응급실은 어떤 곳일까
+title: 응급실, 새벽 5시
 date: 2019-09-25T09:24:31.674Z
 description: 요로결석, 응급실, 미친 여자 둘
 category: essay
