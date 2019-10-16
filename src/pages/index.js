@@ -32,6 +32,13 @@ const BlogIndex = ({ data, location }) => {
                 category={node.frontmatter.category}
               />
             </header>
+            <section>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: node.frontmatter.description || node.excerpt,
+                }}
+              />
+            </section>
           </article>
         )
       })}
@@ -41,17 +48,16 @@ const BlogIndex = ({ data, location }) => {
 
 export default BlogIndex
 
-// filter: {frontmatter: {category: {regex: "/^(?!algorithm)/" }}}
-
 export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
+query {
+  site {
+    siteMetadata {
+      title
     }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+  }
+  allMarkdownRemark(
+    sort: { fields: [frontmatter___date], order: DESC }
+    filter: {frontmatter: {category: {regex: "/^(?!algorithm)/" }}}
     ) {
       edges {
         node {
