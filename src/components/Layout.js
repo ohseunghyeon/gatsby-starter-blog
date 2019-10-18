@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Header from './Header'
 
 import { rhythm } from "../utils/typography"
+import { relative } from "upath"
 
 const Container = styled.div`
   display: flex;
@@ -18,9 +19,8 @@ const Container = styled.div`
 const Content = styled.div`
   margin: 0 auto;
   width: 100%;
-  max-width: 49rem;
+  max-width: 39rem;
   @media screen and (max-width: 768px) {
-    max-width: 39rem;
     padding-top: 50px;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -35,7 +35,9 @@ const Layout = ({ title, children, location }) => {
     <Container>
       <Header title={title} location={location} />
       <Content>
-        <main>{children}</main>
+        <main
+          style={{ position: `relative` }}
+        >{children}</main>
         <footer>
           {/* <a href={`https://github.com/ohseunghyeon`} target="_blank" rel="noopener noreferrer">
           github

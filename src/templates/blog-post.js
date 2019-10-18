@@ -5,6 +5,7 @@ import Bio from "../components/Bio"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import PostFrontmatter from "../components/PostFrontmatter"
+import PostTableOfContent from "../components/PostTableOfContent"
 import { Utterances } from '../components/PostComment'
 import { rhythm } from "../utils/typography"
 
@@ -37,14 +38,9 @@ class BlogPostTemplate extends React.Component {
               isInPost={true}
             />
           </header>
-          {/* TODO: TOC */}
-          {/* <nav dangerouslySetInnerHTML={{ __html: post.tableOfContents }} /> */}
+          <PostTableOfContent tableOfContents={post.tableOfContents} />
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          <hr
-            style={{
-              marginBottom: rhythm(1),
-            }}
-          />
+          <hr style={{ marginBottom: rhythm(1) }} />
           <footer>
             <Bio />
           </footer>

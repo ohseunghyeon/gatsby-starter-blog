@@ -43,6 +43,7 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          `gatsby-remark-autolink-headers`, // should be placed before prismjs
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           {
