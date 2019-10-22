@@ -24,7 +24,7 @@ const TOC = styled.div`
       }
     }
   }
-  border-left: 5px solid black;
+  border-left: 5px solid var(--border-color);
 `;
 
 const PostTableOfContent = ({ tableOfContents }) => {
