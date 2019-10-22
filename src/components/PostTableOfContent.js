@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const TOC = styled.div`
   display: none;
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1278px) {
     display: block;
   }
   position: fixed;

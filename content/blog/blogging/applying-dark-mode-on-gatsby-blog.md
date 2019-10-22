@@ -1,5 +1,5 @@
 ---
-title: Gatsby 블로그에 Dark mode 넣기
+title: Gatsby 블로그에 Dark mode 적용하기
 date: 2019-10-14T11:40:40.367Z
 description: css class를 switch로 활용하여 css variable에 따라 값을 바꿔주는 방법으로 dark mode 구현하기
 category: blogging
@@ -7,7 +7,7 @@ category: blogging
 
 ## Dark mode
 
-최근 윈도우나 맥OS, 심지어 내가 사용하는 아이폰의 IOS까지 Dark mode이 도입됐다. Dark mode는 말 그대로 전반적인 인터페이스의 색상이 어둡다. 그래서 어두운 환경에서 눈의 피로를 감소시켜준다.
+최근 윈도우나 맥OS, 그리고 내가 사용하는 아이폰의 IOS에도 Dark mode가 도입됐다. Dark mode는 말 그대로 전반적인 인터페이스의 색상이 어둡다. 그래서 어두운 환경에서 눈의 피로를 감소시켜준다.
 
 ## dark mode in CSS
 
@@ -19,9 +19,9 @@ CSS에도 dark mode에 대응하기 위한 기능이 추가되었는데, `prefer
 }
 ```
 
-이 쿼리를 사용하면 dark 모드가 설정된 os와 아닌 os에서의 css 결과가 달라질 것이다.
+이 쿼리를 사용하면 dark mode가 설정된 os와 아닌 os에서의 css 결과가 달라질 것이다.
 
-아래와 같은 경우 dark모드인 경우 배경과 글의 색이 역전된다.
+아래와 같은 경우 dark mode인 경우 배경과 글의 색이 역전된다.
 
 ```css
 body {
