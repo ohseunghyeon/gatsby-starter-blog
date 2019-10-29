@@ -11,7 +11,7 @@ const TOC = styled.div`
   right: 10px;
   white-space: nowrap;
   font-size: 0.9em;
-  width: calc((100vw - 228px - 39rem) / 2 - 2.03125rem);
+  width: calc((100vw - 228px - 49rem) / 2 - 2.03125rem);
   overflow: hidden;
   ol, ul {
     list-style: none;
