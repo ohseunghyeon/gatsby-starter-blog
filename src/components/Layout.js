@@ -3,7 +3,6 @@ import styled from "styled-components"
 import Header from './Header'
 
 import { rhythm } from "../utils/typography"
-import { relative } from "upath"
 
 const Container = styled.div`
   display: flex;
