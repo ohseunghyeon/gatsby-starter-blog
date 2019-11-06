@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Header from './Header'
+import Header from "./Header"
 
 import { rhythm } from "../utils/typography"
 
@@ -9,7 +9,7 @@ const Container = styled.div`
   color: var(--textNormal);
   background: var(--bg);
   transition: color 0.2s ease-out, background 0.2s ease-out;
- 
+
   @media screen and (max-width: 768px) {
     display: block;
   }
@@ -34,9 +34,7 @@ const Layout = ({ title, children, location }) => {
     <Container>
       <Header title={title} location={location} />
       <Content>
-        <main
-          style={{ position: `relative` }}
-        >{children}</main>
+        <main style={{ position: `relative` }}>{children}</main>
         <footer>
           {/* <a href={`https://github.com/ohseunghyeon`} target="_blank" rel="noopener noreferrer">
           github
