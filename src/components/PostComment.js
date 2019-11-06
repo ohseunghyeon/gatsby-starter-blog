@@ -5,7 +5,7 @@ const repo = `ohseunghyeon/ohseunghyeon.github.io`
 
 export const Utterances = () => {
   const rootElm = React.createRef()
-
+  console.log('그리기')
   useEffect(() => {
     const utterances = document.createElement('script')
     const utterancesConfig = {
@@ -20,7 +20,8 @@ export const Utterances = () => {
       utterances.setAttribute(configKey, utterancesConfig[configKey])
     })
     rootElm.current.appendChild(utterances)
-  }, [rootElm])
+  }, [])
+  // }, [rootElm])
 
   return <div ref={rootElm} />
 }
