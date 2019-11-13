@@ -26,4 +26,4 @@ category: blogging
 - [x] [카테고리 넣기](/blogging/making-category-page/)
 - [x] 댓글 달기 - https://utteranc.es/
 - [x] [Light/Dark Theme 넣기](/blogging/applying-dark-mode-on-gatsby-blog/)
-- [ ] 글 내의 목차
+- [x] 글 내의 목차
