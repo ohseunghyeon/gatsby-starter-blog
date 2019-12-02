@@ -127,8 +127,18 @@ Bing Ads API의 인증은 [OAuth 2.0](https://tools.ietf.org/html/rfc6749) 방�
 
 ```
 
-### Add Account
+### Account
 
-### Add Campaign
+### Campaign
 
-### Add Ad group
+### Ad group
+
+### Budget and Bid Strategies
+
+Ads가 돌아가게 하기 위해서는 Campaign에 예산이 필요하다. 또한 입찰 전략(Bid Strategies)을 설정해야 하고, 선택적으로 keyword에도 설정할 수 있다.
+
+#### Budget Types
+
+예산(Budget)은 campaign에 사용할 돈을 말한다. 캠패인에 daily budget을 설정할 수 있는데, 예산에 도달하면 해당 월의 마지막 날까지 광고가 일시적으로 중지된다. 예산은 목표치다. 실제로 사용되는 광고비는 예산보다 높거나 낮을 수 있고, 이는 다양한 변수에 의해 발생할 수 있다.
+
+shared budget은 동일한 어카운트 내에서 캠페인마다 daily budget을 설정할 수 있게 해준다.
