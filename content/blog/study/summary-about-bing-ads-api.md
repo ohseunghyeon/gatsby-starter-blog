@@ -119,7 +119,9 @@ Bing Ads API의 인증은 [OAuth 2.0](https://tools.ietf.org/html/rfc6749) 방�
 
 파이썬 SDK의 code example에서는 자동으로 해당 토큰을 파일로 저장한다. 그럼 이 토큰을 바탕으로 SDK의 각종 서비스를 생성하여 사용하면 된다. 나의 경우 account, campaign, ad group, ads를 생성, 수정, 삭제하기 위해 SDK를 사용하였으며, 대부분의 유스케이스가 비슷할 것이다.
 
-<!-- 아래는 각 -->
+... 계속
+
+<!-- 아래는 각 
 
 ### Authentication
 
@@ -142,3 +144,5 @@ Ads가 돌아가게 하기 위해서는 Campaign에 예산이 필요하다. 또�
 예산(Budget)은 campaign에 사용할 돈을 말한다. 캠패인에 daily budget을 설정할 수 있는데, 예산에 도달하면 해당 월의 마지막 날까지 광고가 일시적으로 중지된다. 예산은 목표치다. 실제로 사용되는 광고비는 예산보다 높거나 낮을 수 있고, 이는 다양한 변수에 의해 발생할 수 있다.
 
 shared budget은 동일한 어카운트 내에서 캠페인마다 daily budget을 설정할 수 있게 해준다.
+
+-->
