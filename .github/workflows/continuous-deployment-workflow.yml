@@ -33,9 +33,13 @@ jobs:
       run: |
         cd ..
         git clone git@github.com:ohseunghyeon/ohseunghyeon.github.io.git static_site_repo
+        pwd
+        ls
 
     - name: install dependencies & build
       run: |
+        pwd
+        ls
         yarn
         yarn build
 
