@@ -10,7 +10,7 @@ jobs:
     - name: clone gatsby-blog
       uses: actions/checkout@master
       with:
-        path: 'static-site-generator'
+        path: 'static_site_generator'
 
     - name: git config
       env:
@@ -31,30 +31,22 @@ jobs:
 
     - name: clone static_site_repo
       run: |
-        ls -al
         git clone git@github.com:ohseunghyeon/ohseunghyeon.github.io.git static_site_repo
-        ls -al
 
     - name: install dependencies & build
       run: |
-        pwd
-        ls -al
-        cd static-site-generator
+        cd ./static_site_generator
         yarn
         yarn build
 
     - name: move build files to static files repo
       run: |
-        pwd
-        ls -al
         rm -rf ./static_site_repo/*
-        mv ./static-site-generator/public/* ./static_site_repo
+        mv ./static_site_generator/public/* ./static_site_repo
 
     - name: push changed files
       run: |
-        pwd
-        ls -al
         cd ./static_site_repo
         git add .
-        git commit -m "$(git -C ../static-site-generator/ log --format=%B -n 1)"
+        git commit -m "$(git -C ../static_site_generator/ log --format=%B -n 1)"
         git push origin master
