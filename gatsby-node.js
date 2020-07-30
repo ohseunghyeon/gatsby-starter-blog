@@ -6,6 +6,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const categoryPage = path.resolve(`./src/templates/category-page.js`)
+  const readList = path.resolve(`./src/templates/read-list.js`)
   const result = await graphql(
     `
       {
@@ -83,9 +84,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
         category += splitedCategory.shift();
 
+        let component = categoryPage
+        if (category === 'report') component = readList
         createPage({
           path: `/${category}`,
-          component: categoryPage,
+          component,
           context: {
             category: `^/${category}/`
           }
