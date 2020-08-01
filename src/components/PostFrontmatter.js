@@ -43,7 +43,7 @@ const PostFrontmatter = ({ date, timeToRead, category, isInPost }) => {
   return (
     <Container>
       {date}
-      {` • ${formatReadingTime(timeToRead)}`}
+      {timeToRead && ` • ${formatReadingTime(timeToRead)}`}
       {
         category &&
         <CategoryLink to={`/${category}`}>

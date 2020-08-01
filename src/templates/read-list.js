@@ -4,7 +4,6 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import PostListTitle from "../components/PostListTitle"
-import PostFrontmatter from "../components/PostFrontmatter"
 import { rhythm } from "../utils/typography"
 
 const ReadList = ({ data, location, pageContext }) => {
@@ -21,23 +20,23 @@ const ReadList = ({ data, location, pageContext }) => {
         return (
           <article key={node.fields.slug}>
             <header>
-              <h3 style={{ marginBottom: rhythm(1 / 4) }}>
+              <h4 style={{ marginBottom: rhythm(1 / 4) }}>
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>
-              </h3>
-              <PostFrontmatter
-                date={node.frontmatter.date}
-                timeToRead={node.timeToRead}
-              />
+              </h4>
+              <section>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.excerpt,
+                  }}
+                />
+                <p
+                  style={{ fontSize: rhythm(1 / 2) }}
+                  dangerouslySetInnerHTML={{ __html: node.frontmatter.date }}
+                />
+              </section>
             </header>
-            {/* <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section> */}
           </article>
         )
       })}
