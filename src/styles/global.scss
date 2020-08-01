@@ -13,11 +13,11 @@ body.light {
   --inlineCode-bg: rgba(255, 229, 100, 0.2);
   --inlineCode-text: #1a1a1a;
   --border-color: #d6d9dc;
+  --hamburgerColor: rgba(0,0,0,0.8);
 }
 
 body.dark {
   -webkit-font-smoothing: antialiased;
-
   --bg: #282c35;
   --header: #ffffff;
   --textNormal: rgba(255, 255, 255, 0.88);
@@ -27,6 +27,7 @@ body.dark {
   --inlineCode-bg: hsl(222, 14%, 25%);
   --inlineCode-text: #e6e6e6;
   --border-color: #43464d;
+  --hamburgerColor: #ffffff;
 }
 
 body:lang(ko) header,

@@ -1,4 +1,4 @@
-$color: rgba(0,0,0,0.8);
+$color: var(--hamburgerColor);
 $duration: .3s;
 .nav-toggle {
 	display: none;

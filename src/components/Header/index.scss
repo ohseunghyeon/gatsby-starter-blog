@@ -38,7 +38,7 @@
   @media screen and (max-width: 768px) {
     &.headroom {
       will-change: transform;
-      transition: transform 200ms linear;
+      transition: transform 200ms ease-out, color 0.2s ease-out, background 0.2s ease-out;
     }
     &.headroom--pinned {
         transform: translateY(0%);

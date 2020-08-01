@@ -13,6 +13,7 @@ const NavToggle = () => {
       className="nav-toggle"
       ref={refButton}
       onClick={handleToggle}
+      aria-label="nav-toggle"
     />
   )
 }
