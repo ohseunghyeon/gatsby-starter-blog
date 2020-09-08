@@ -103,8 +103,16 @@ module.exports = (async function () {
   const date = new Date().toISOString();
   const category = await getCategories()
 
-  const title = await getTitle()
-  const contents = refineContents({ title, date, description: '', category })
+  const title = await getTitle();
+
+  const headers = { title, date, description: '', category };
+  if (category === 'report') {
+    headers.creator = '';
+    headers.created_at = '';
+    headers.link = '';
+  }
+
+  const contents = refineContents(headers)
 
   const type = await getType()
 
