@@ -39,9 +39,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           />
         </header>
         <PostTableOfContent tableOfContents={post.tableOfContents} />
-        <section dangerouslySetInnerHTML={{ __html: post.html }}
+        <section
+          dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
-
         />
         <hr style={{ marginBottom: rhythm(1) }} />
         <footer>

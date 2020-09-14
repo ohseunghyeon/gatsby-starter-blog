@@ -23,10 +23,7 @@ const Bio = () => {
       }
       site {
         siteMetadata {
-          author {
-            name
-            summary
-          }
+          author
           social {
             github
           }
@@ -45,7 +42,7 @@ const Bio = () => {
     >
       <Image
         fixed={data.avatar.childImageSharp.fixed}
-        alt={author.name}
+        alt={author}
         style={{
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
