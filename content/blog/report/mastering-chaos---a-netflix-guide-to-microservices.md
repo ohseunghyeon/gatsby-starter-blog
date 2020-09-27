@@ -9,3 +9,11 @@ link: https://www.youtube.com/watch?v=CZ3wIuvmHeM
 todo: true
 ---
 
+## Before moving to MSA
+
+Monolithic code base - took one week for troubleshooting
+Monolithic database - if this DB goes down, everything goes down. to add a column to a table was a big cross-functional project.
+
+## things
+
+EVCache
