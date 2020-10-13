@@ -143,7 +143,7 @@ module.exports = {
               {
                 allMarkdownRemark(
                   sort: { order: DESC, fields: [frontmatter___date] },
-                  filter: {frontmatter: {category: {regex: "/^(?!algorithm)/" }}}
+                  filter: {frontmatter: {category: {regex: "/^(?!algorithm|report)/" }}}
                 ) {
                   edges {
                     node {

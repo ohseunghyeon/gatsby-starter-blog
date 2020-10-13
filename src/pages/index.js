@@ -61,7 +61,7 @@ query {
   }
   allMarkdownRemark(
     sort: { fields: [frontmatter___date], order: DESC }
-    filter: {frontmatter: {category: {regex: "/^(?!algorithm)/" }}}
+    filter: {frontmatter: {category: {regex: "/^(?!algorithm|report)/" }}}
     ) {
       edges {
         node {
