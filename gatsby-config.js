@@ -97,14 +97,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-web-font-loader`,
       options: {
-        fonts: [
-          {
-            family: `Nanum Gothic`,
-            subsets: [`latin`],
-          },
-        ],
+        google: {
+          families: ['Nanum Gothic:latin',]
+        }
       },
     },
     `gatsby-transformer-sharp`,
