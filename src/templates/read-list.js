@@ -17,6 +17,8 @@ const ReadList = ({ data, location, pageContext }) => {
       <PostListTitle title={category} />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
+        const link = node.frontmatter.link;
+
         return (
           <article key={node.fields.slug}>
             <header>
@@ -26,11 +28,11 @@ const ReadList = ({ data, location, pageContext }) => {
                 </Link>
               </h4>
               <section>
-                <p
+                {/* <p
                   dangerouslySetInnerHTML={{
                     __html: node.excerpt,
                   }}
-                />
+                /> */}
                 <p
                   style={{ fontSize: rhythm(1 / 2) }}
                   dangerouslySetInnerHTML={{ __html: node.frontmatter.date }}
@@ -69,6 +71,8 @@ export const pageQuery = graphql`
             title
             description
             category
+            creator
+            link
           }
         }
       }

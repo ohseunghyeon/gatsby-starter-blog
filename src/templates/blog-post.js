@@ -5,6 +5,7 @@ import Bio from "../components/Bio"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import PostFrontmatter from "../components/PostFrontmatter"
+import PostFrontmatterTIL from "../components/PostFrontmatterTIL"
 import PostTableOfContent from "../components/PostTableOfContent"
 import { Utterances } from '../components/PostComment'
 import { rhythm } from "../utils/typography"
@@ -31,12 +32,24 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             {post.frontmatter.title}
           </h1>
-          <PostFrontmatter
-            date={post.frontmatter.date}
-            timeToRead={post.timeToRead}
-            category={post.frontmatter.category}
-            isInPost={true}
-          />
+          {
+            post.frontmatter.category === 'report'
+              ? <PostFrontmatterTIL
+                date={post.frontmatter.date}
+                timeToRead={post.timeToRead}
+                category={post.frontmatter.category}
+                isInPost={true}
+                creator={post.frontmatter.creator}
+                created_at={post.frontmatter.created_at}
+                link={post.frontmatter.link}
+              />
+              : <PostFrontmatter
+                date={post.frontmatter.date}
+                timeToRead={post.timeToRead}
+                category={post.frontmatter.category}
+                isInPost={true}
+              />
+          }
         </header>
         <PostTableOfContent tableOfContents={post.tableOfContents} />
         <section
@@ -100,6 +113,9 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         category
+        creator
+        created_at
+        link
       }
     }
   }
